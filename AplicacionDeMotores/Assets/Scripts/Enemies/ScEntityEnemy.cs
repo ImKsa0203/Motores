@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ScEntityEnemy : ScEntity
 {
-    [Header("Refs")]
     protected Transform _target;
     protected bool _follow = true;
 
