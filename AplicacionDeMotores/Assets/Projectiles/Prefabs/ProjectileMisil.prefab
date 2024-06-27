@@ -50,10 +50,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravity: 1
   speed: 15
+  timeToDestroy: 10
   damage: 0
   isEnemy: 0
-  timeToDestroy: 10
-  collitionLayerMask:
+  _collitionLayerMask:
     serializedVersion: 2
     m_Bits: 1920
   _explosion: {fileID: 2613653543182174268, guid: 6578b53bf1f6ad1418e05dfbb1962980, type: 3}
