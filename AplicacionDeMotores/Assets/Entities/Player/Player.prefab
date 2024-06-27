@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fireRate: 0.5
-  _projectilePrefab: {fileID: 7697130245237819586, guid: 1462fb6a52c493740a3869b97ed6938a, type: 3}
   _automatic: 0
+  _projectilePrefab: {fileID: 7697130245237819586, guid: 1462fb6a52c493740a3869b97ed6938a, type: 3}
 --- !u!212 &5330023451625615575
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -176,7 +176,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.2}
+  m_Size: {x: 0.9, y: 0.2}
   m_EdgeRadius: 0
 --- !u!114 &4067913542623035793
 MonoBehaviour:
@@ -239,8 +239,8 @@ MonoBehaviour:
   _weapons:
   - {fileID: 6015292219142808900}
   - {fileID: 5476369071922696598}
-  scEntity: {fileID: 0}
   weaponSelected: 0
+  scEntity: {fileID: 0}
 --- !u!1 &5462296797633233348
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,8 +287,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fireRate: 1
-  _projectilePrefab: {fileID: 7697130245237819586, guid: 915aa34cdae39e64f899e2b30931dcf6, type: 3}
   _automatic: 1
+  _projectilePrefab: {fileID: 7697130245237819586, guid: 915aa34cdae39e64f899e2b30931dcf6, type: 3}
 --- !u!212 &5529971915065705549
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -488,8 +488,8 @@ MonoBehaviour:
   _speed: 5
   damage: 25
   _jumps: 1
-  isEnemy: 0
   _spriteRenderer: {fileID: 4610608098527455380}
+  isEnemy: 0
   _weaponManager: {fileID: 8239780120371243018}
   _weapon: {fileID: 1704917899800125010}
   _camera: {fileID: 3798370600635141390}
