@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScEntityEnemy : ScEntity
+public class Enemy : Entity
 {
     protected Transform _target;
     protected bool _follow = true;
@@ -10,7 +10,7 @@ public class ScEntityEnemy : ScEntity
     protected override void Awake()
     {
         base.Awake();
-        _target = FindAnyObjectByType<ScEntityPlayer>().transform;
+        _target = FindAnyObjectByType<Player>().transform;
         isEnemy = true;
     }
 

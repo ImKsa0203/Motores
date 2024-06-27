@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.InputSystem;
 
-public class ScEntityPlayer : ScEntity
+public class Player : Entity
 {
     [Header("Refs")]
-    [SerializeField] private ScWeaponManager _weaponManager;
+    [SerializeField] private WeaponManager _weaponManager;
     [SerializeField] private Transform _weapon;
     [SerializeField] private Camera _camera;
 

@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScFloorCollider : MonoBehaviour
+public class FloorCollider : MonoBehaviour
 {
-    private ScEntity scEntity;
+    private Entity scEntity;
     private int overlaped = 0;
 
     private void Awake()
     {
-        scEntity = GetComponentInParent<ScEntity>();
+        scEntity = GetComponentInParent<Entity>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

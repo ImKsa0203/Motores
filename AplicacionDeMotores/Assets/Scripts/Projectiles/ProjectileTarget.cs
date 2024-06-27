@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScProjectileTarget : ScProjectileDamage
+public class ProjectileTarget : ProjectileDamage
 {
     [Header("Stats")]
     [SerializeField] private float angularSpeed = 2;

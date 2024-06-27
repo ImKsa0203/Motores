@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScProjectile : MonoBehaviour
+public class Projectile : MonoBehaviour
 {
     [Header("Stats")]
     [SerializeField] public float gravity = 0;

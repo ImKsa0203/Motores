@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScProjectileDamage : ScProjectile
+public class ProjectileDamage : Projectile
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        ScEntity entity = collision.GetComponent<ScEntity>();
+        Entity entity = collision.GetComponent<Entity>();
         if (entity)
         {
             if (entity.isEnemy != isEnemy)

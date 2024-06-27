@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScSpike : MonoBehaviour
+public class Spike : MonoBehaviour
 {
     [Header("Stats")]
     [SerializeField] private int _damage = 1;
     [SerializeField] private float _damageInterval = 0.1f;
 
-    private ScCooldown _cooldown = new ScCooldown();
+    private Cooldown _cooldown = new Cooldown();
 
     void OnTriggerStay2D(Collider2D other)
     {
-        ScEntity scEntity = other.GetComponent<ScEntity>();
+        Entity scEntity = other.GetComponent<Entity>();
         if (scEntity != null)
         {
             if (_cooldown.IsReady)

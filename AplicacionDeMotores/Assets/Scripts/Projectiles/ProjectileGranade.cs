@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ScProjectileGranade : ScProjectile
+public class ProjectileGranade : Projectile
 {
     [Header("Stats")]
     [SerializeField] private float _inicialTorque = -5;
@@ -29,7 +29,7 @@ public class ScProjectileGranade : ScProjectile
     private void Explode()
     {
         GameObject explosion = Instantiate(_explosion, transform.position, Quaternion.identity);
-        explosion.GetComponent<ScExplosion>().damage = damage;
+        explosion.GetComponent<Explosion>().damage = damage;
         Destroy(gameObject);
     }
 }

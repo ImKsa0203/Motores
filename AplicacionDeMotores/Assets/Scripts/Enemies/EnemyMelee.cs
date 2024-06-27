@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScEntityMelee : ScEntityEnemy
+public class EnemyMelee : Enemy
 {
     [Header("Stats")]
     [SerializeField] private float _fireRate = 2;

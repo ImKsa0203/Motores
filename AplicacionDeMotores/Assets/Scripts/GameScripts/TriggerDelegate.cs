@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ScTriggerDelegate : MonoBehaviour
+public class TriggerDelegate : MonoBehaviour
 {
     [Header("Events")]
     [SerializeField] private UnityEvent EnterEvents;

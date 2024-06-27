@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScWeaponManager : MonoBehaviour
+public class WeaponManager : MonoBehaviour
 {
     [Header("Weapon")]
-    [SerializeField] private ScWeapon[] _weapons;
+    [SerializeField] private Weapon[] _weapons;
     public int weaponSelected = 0;
     [Header("Refs")]
-    public ScEntity scEntity;
+    public Entity scEntity;
 
     private void Awake()
     {
-        scEntity = GetComponentInParent<ScEntity>();
+        scEntity = GetComponentInParent<Entity>();
     }
 
     private void Start()

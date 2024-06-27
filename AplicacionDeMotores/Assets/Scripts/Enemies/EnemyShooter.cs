@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScEntityShooter : ScEntityEnemy
+public class EnemyShooter : Enemy
 {
     [Header("Stats")]
     [SerializeField] private float _fireRate = 2;
@@ -34,7 +34,7 @@ public class ScEntityShooter : ScEntityEnemy
     private void Shoot()
     {
         GameObject projectile = Instantiate(_projectilePrefab, _weapon.position, _weapon.rotation);
-        ScProjectileTarget scProjectile = projectile.GetComponent<ScProjectileTarget>();
+        ProjectileTarget scProjectile = projectile.GetComponent<ProjectileTarget>();
         scProjectile.isEnemy = isEnemy;
         scProjectile.damage = damage;
         scProjectile.target = _target;

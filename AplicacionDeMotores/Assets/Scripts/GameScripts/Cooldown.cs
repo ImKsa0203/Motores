@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScCooldown
+public class Cooldown
 {
     private float _nextTime = 0;
     public bool IsReady => Time.time >= _nextTime;

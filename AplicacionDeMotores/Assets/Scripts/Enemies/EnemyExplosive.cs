@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScEntityExplosive : ScEntityEnemy
+public class EnemyExplosive : Enemy
 {
     [Header("Stats")]
     [SerializeField] private float _timeToExplode = 1;
@@ -17,7 +17,7 @@ public class ScEntityExplosive : ScEntityEnemy
     protected override void Die()
     {
         GameObject explosion = Instantiate(_explosion, transform.position, Quaternion.identity);
-        explosion.GetComponent<ScExplosion>().damage = damage;
+        explosion.GetComponent<Explosion>().damage = damage;
         base.Die();
     }
 }
