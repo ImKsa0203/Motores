@@ -4,11 +4,5 @@ using UnityEngine;
 
 public class ScWeaponRifle : ScWeapon
 {
-    /*
-    public override void Shoot()
-    {
-        base.Shoot();
-        
-    }
-    */
+
 }
