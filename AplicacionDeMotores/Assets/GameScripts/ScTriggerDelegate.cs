@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class ScTriggerDelegate : MonoBehaviour
 {
+    [Header("Events")]
     [SerializeField] private UnityEvent EnterEvents;
     [SerializeField] private UnityEvent ExitEvents;
 

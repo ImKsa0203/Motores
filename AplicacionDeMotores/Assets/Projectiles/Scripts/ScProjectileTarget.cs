@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ScProjectileTarget : ScProjectileDamage
 {
-    public Transform target;
+    [Header("Stats")]
     [SerializeField] private float angularSpeed = 2;
+    [Header("AutoDef")]
+    public Transform target;
 
     private void Update()
     {

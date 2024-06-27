@@ -5,9 +5,11 @@ using UnityEngine;
 
 public class ScProjectileGranade : ScProjectile
 {
-    [SerializeField] private GameObject _explosion;
+    [Header("Stats")]
     [SerializeField] private float _inicialTorque = -5;
     [SerializeField] private float _timeToExplode = 1;
+    [Header("Refs")]
+    [SerializeField] private GameObject _explosion;
     private bool _exploding = false;
 
     private void Start()
@@ -17,7 +19,7 @@ public class ScProjectileGranade : ScProjectile
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collitionLayerMask == (collitionLayerMask | (1 << collision.gameObject.layer)) && !_exploding)
+        if (_collitionLayerMask == (_collitionLayerMask | (1 << collision.gameObject.layer)) && !_exploding)
         {
             Invoke("Explode", _timeToExplode);
             _exploding = true;

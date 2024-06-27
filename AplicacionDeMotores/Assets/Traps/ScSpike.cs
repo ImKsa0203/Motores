@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class ScSpike : MonoBehaviour
 {
-    public int damage = 1;
-    public float damageInterval = 0.1f;
-    private float nextDamageTime = 0;
+    [Header("Stats")]
+    [SerializeField] private int _damage = 1;
+    [SerializeField] private float _damageInterval = 0.1f;
+
+    private ScCooldown _cooldown = new ScCooldown();
 
     void OnTriggerStay2D(Collider2D other)
     {
         ScEntity scEntity = other.GetComponent<ScEntity>();
         if (scEntity != null)
         {
-            if (Time.time >= nextDamageTime)
+            if (_cooldown.IsReady)
             {
-                scEntity.TakeDamage(damage);
-                nextDamageTime = Time.time + damageInterval;
+                scEntity.TakeDamage(_damage);
+                _cooldown.StartCooldown(_damageInterval);
             }
         }
     }

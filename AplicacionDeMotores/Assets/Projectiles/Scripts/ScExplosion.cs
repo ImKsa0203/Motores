@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ScExplosion : MonoBehaviour
 {
+    [Header("AutoDef")]
     public int damage = 10;
 
     private void Awake()

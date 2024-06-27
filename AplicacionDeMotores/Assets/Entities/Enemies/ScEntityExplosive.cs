@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ScEntityExplosive : ScEntityEnemy
 {
-    [SerializeField] private GameObject _explosion;
+    [Header("Stats")]
     [SerializeField] private float _timeToExplode = 1;
+    [Header("Refs")]
+    [SerializeField] private GameObject _explosion;
 
     public void Exploding()
     {

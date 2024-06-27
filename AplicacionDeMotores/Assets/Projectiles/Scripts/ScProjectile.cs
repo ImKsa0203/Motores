@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class ScProjectile : MonoBehaviour
 {
+    [Header("Stats")]
     [SerializeField] public float gravity = 0;
     [SerializeField] public float speed = 10;
+    [SerializeField] protected float timeToDestroy = 10;
+    [Header("AutoDef")]
     [SerializeField] public int damage = 0;
     [SerializeField] public bool isEnemy = false;
-    [SerializeField] protected float timeToDestroy = 10;
-    [SerializeField] protected LayerMask collitionLayerMask;
+    [Header("Refs")]
+    [SerializeField] protected LayerMask _collitionLayerMask;
     protected Rigidbody2D _rigidbody2D;
 
     private void Awake()

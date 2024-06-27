@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class ScEntityShooter : ScEntityEnemy
 {
+    [Header("Stats")]
     [SerializeField] private float _fireRate = 2;
+    [Header("Refs")]
     [SerializeField] private Transform _weapon;
-    [SerializeField] protected GameObject _projectilePrefab;
+    [SerializeField] private GameObject _projectilePrefab;
 
     private void Start()
     {

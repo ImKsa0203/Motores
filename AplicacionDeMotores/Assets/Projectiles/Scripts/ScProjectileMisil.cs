@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ScProjectileMisil : ScProjectile
 {
+    [Header("Refs")]
     [SerializeField] private GameObject _explosion;
 
     private void Update()
@@ -14,7 +15,7 @@ public class ScProjectileMisil : ScProjectile
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collitionLayerMask == (collitionLayerMask | (1 << collision.gameObject.layer)))
+        if (_collitionLayerMask == (_collitionLayerMask | (1 << collision.gameObject.layer)))
         {
             GameObject explosion = Instantiate(_explosion, transform.position, Quaternion.identity);
             explosion.GetComponent<ScExplosion>().damage = damage;

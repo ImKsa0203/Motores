@@ -14,7 +14,7 @@ public class ScProjectileDamage : ScProjectile
                 entity.TakeDamage(damage);
             }
         }
-        if (collitionLayerMask == (collitionLayerMask | (1 << collision.gameObject.layer)))
+        if (_collitionLayerMask == (_collitionLayerMask | (1 << collision.gameObject.layer)))
         {
             Destroy(gameObject);
         }

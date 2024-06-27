@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class ScWeaponManager : MonoBehaviour
 {
+    [Header("Weapon")]
     [SerializeField] private ScWeapon[] _weapons;
-    public ScEntity scEntity;
     public int weaponSelected = 0;
+    [Header("Refs")]
+    public ScEntity scEntity;
 
     private void Awake()
     {

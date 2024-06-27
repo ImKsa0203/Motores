@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class ScEntityPlayer : ScEntity
 {
-    [SerializeField] private SpriteRenderer _spriteRenderer;
+    [Header("Refs")]
     [SerializeField] private ScWeaponManager _weaponManager;
     [SerializeField] private Transform _weapon;
     [SerializeField] private Camera _camera;
@@ -14,7 +14,6 @@ public class ScEntityPlayer : ScEntity
     protected override void Awake()
     {
         base.Awake();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
         isEnemy = false;
     }
 

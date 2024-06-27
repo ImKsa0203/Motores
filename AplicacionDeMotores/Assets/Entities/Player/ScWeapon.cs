@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class ScWeapon : MonoBehaviour
 {
-    [SerializeField] private float _fireRate;
-    [SerializeField] protected GameObject _projectilePrefab;
+    [Header("Stats")]
+    [SerializeField] private float _fireRate = 1;
     [SerializeField] protected bool _automatic = true;
+    [Header("Refs")]
+    [SerializeField] protected GameObject _projectilePrefab;
     private ScWeaponManager _weaponManager;
     private ScCooldown _cooldown = new ScCooldown();
 

@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class ScEntityMelee : ScEntityEnemy
 {
+    [Header("Stats")]
     [SerializeField] private float _fireRate = 2;
     [SerializeField] private float _timeAttacking = 0.5f;
+    [Header("Refs")]
     [SerializeField] private GameObject _attackObject;
-    private Collider2D _attackCollider;
 
     protected override void Awake()
     {
         base.Awake();
-        _attackCollider = _attackObject.GetComponent<Collider2D>();
         _attackObject.SetActive(false);
     }
 
