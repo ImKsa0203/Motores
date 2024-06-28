@@ -48,6 +48,8 @@ MonoBehaviour:
   _fireRate: 0.5
   _automatic: 0
   _projectilePrefab: {fileID: 7697130245237819586, guid: 1462fb6a52c493740a3869b97ed6938a, type: 3}
+  _weaponManager: {fileID: 0}
+  _shooting: 0
 --- !u!212 &5330023451625615575
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -289,6 +291,8 @@ MonoBehaviour:
   _fireRate: 1
   _automatic: 1
   _projectilePrefab: {fileID: 7697130245237819586, guid: 915aa34cdae39e64f899e2b30931dcf6, type: 3}
+  _weaponManager: {fileID: 0}
+  _shooting: 0
 --- !u!212 &5529971915065705549
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -353,7 +357,7 @@ GameObject:
   - component: {fileID: 3798370600635141390}
   - component: {fileID: 4090875941201644159}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -602,7 +606,7 @@ MonoBehaviour:
   m_DefaultControlScheme: 
   m_DefaultActionMap: Default
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 3798370600635141390}
 --- !u!50 &9202587377777244765
 Rigidbody2D:
   serializedVersion: 4
