@@ -41,16 +41,17 @@ public abstract class Weapon : MonoBehaviour
                     yield break;
                 }
             }
+            else
+            {
+                yield return null;
+            }
         }
     }
 
     public void StartShoot()
     {
         _shooting = true;
-        if (ShootCoroutine() != null)
-        {
-            StartCoroutine(ShootCoroutine());
-        }
+        StartCoroutine(ShootCoroutine());
     }
 
     public void CancelAutomatic()
