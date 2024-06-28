@@ -14,11 +14,12 @@ public class Canon : MonoBehaviour
 
     private void Awake()
     {
-        _weapon = GetComponent<Weapon>();
+        _weapon.damage = _damage;
+        _weapon.isEnemy = true;
     }
 
     private void Start()
     {
-        _weapon.TryShoot();
+        _weapon.StartShoot();
     }
 }

@@ -9,10 +9,11 @@ public class EnemyShooter : Enemy
     [Header("Refs")]
     [SerializeField] private Transform _weapon;
     [SerializeField] private GameObject _projectilePrefab;
+    private Weapon _weapon2;
 
     private void Start()
     {
-        Invoke("Shoot", _fireRate);
+        _weapon2.StartShoot();
     }
 
     protected override void Update()
@@ -29,15 +30,5 @@ public class EnemyShooter : Enemy
         {
             _weapon.localScale = new Vector3(2, 2, 2);
         }
-    }
-
-    private void Shoot()
-    {
-        GameObject projectile = Instantiate(_projectilePrefab, _weapon.position, _weapon.rotation);
-        ProjectileTarget scProjectile = projectile.GetComponent<ProjectileTarget>();
-        scProjectile.isEnemy = isEnemy;
-        scProjectile.damage = damage;
-        scProjectile.target = _target;
-        Invoke("Shoot", _fireRate);
     }
 }

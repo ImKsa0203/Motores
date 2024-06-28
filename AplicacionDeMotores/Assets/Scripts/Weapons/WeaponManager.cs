@@ -22,7 +22,7 @@ public class WeaponManager : MonoBehaviour
 
     public void Attack()
     {
-        _weapons[weaponSelected].TryShoot();
+        _weapons[weaponSelected].StartShoot();
     }
     public void Cancel()
     {

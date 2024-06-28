@@ -2,56 +2,61 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public abstract class Weapon : MonoBehaviour
 {
     [Header("Stats")]
+    public int damage = 10;
+    public bool isEnemy = true;
     [SerializeField] private float _fireRate = 1;
     [SerializeField] protected bool _automatic = true;
     [Header("Refs")]
     [SerializeField] protected GameObject _projectilePrefab;
-    [SerializeField] private WeaponManager _weaponManager;
-    [Header("Internal")]
-    [SerializeField] private bool _shooting = false;
+    protected Transform _rotation;
+    protected Transform _firePoint;
 
     private void Awake()
     {
-        _weaponManager = GetComponentInParent<WeaponManager>();
+        _rotation = GetComponentInParent<Transform>();
+        _firePoint = GetComponentInChildren<Transform>();
+    }
+
+    protected IEnumerator ShootCoroutine()
+    {
+        Shoot();
+        if (_automatic)
+        {
+            yield return new WaitForSeconds(_fireRate);
+        }
+        else
+        {
+            yield break;
+        }
     }
 
     public void StartShoot()
     {
-        _shooting = true;
-        TryShoot();
-    }
-
-    public void TryShoot()
-    {
-        if (_shooting)
+        if (ShootCoroutine() != null)
         {
-            Shoot();
-            if (_automatic)
-            {
-                Invoke("TryShoot", _fireRate);
-            }
+            StartCoroutine(ShootCoroutine());
         }
     }
 
     public void CancelAutomatic()
     {
-        _shooting = false;
+        StopCoroutine(ShootCoroutine());
     }
 
-    protected virtual void Shoot()
-    {
-        GameObject projectile = CreateProjectile();
-    }
+    protected abstract void Shoot();
 
-    protected GameObject CreateProjectile()
+    protected abstract void Skill();
+
+    protected GameObject CreateProjectile(GameObject prefab, Vector3 position, Quaternion rotation)
     {
-        GameObject projectileInstance = Instantiate(_projectilePrefab, _weaponManager.transform.position, _weaponManager.transform.rotation);
+        GameObject projectileInstance = Instantiate(prefab, position, rotation);
         Projectile projectile = projectileInstance.GetComponent<Projectile>();
-        projectile.isEnemy = _weaponManager.scEntity.isEnemy;
-        projectile.damage = _weaponManager.scEntity.damage;
+        projectile.damage = damage;
+        projectile.isEnemy = isEnemy;
         return projectileInstance;
     }
+
 }

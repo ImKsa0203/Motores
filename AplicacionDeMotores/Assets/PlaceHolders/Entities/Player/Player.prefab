@@ -48,7 +48,7 @@ MonoBehaviour:
   _fireRate: 0.5
   _automatic: 0
   _projectilePrefab: {fileID: 7697130245237819586, guid: 1462fb6a52c493740a3869b97ed6938a, type: 3}
-  _weaponManager: {fileID: 0}
+  _weaponManager: {fileID: 8239780120371243018}
   _shooting: 0
 --- !u!212 &5330023451625615575
 SpriteRenderer:
@@ -242,7 +242,7 @@ MonoBehaviour:
   - {fileID: 6015292219142808900}
   - {fileID: 5476369071922696598}
   weaponSelected: 0
-  scEntity: {fileID: 0}
+  scEntity: {fileID: 8921137744836160235}
 --- !u!1 &5462296797633233348
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +291,7 @@ MonoBehaviour:
   _fireRate: 1
   _automatic: 1
   _projectilePrefab: {fileID: 7697130245237819586, guid: 915aa34cdae39e64f899e2b30931dcf6, type: 3}
-  _weaponManager: {fileID: 0}
+  _weaponManager: {fileID: 8239780120371243018}
   _shooting: 0
 --- !u!212 &5529971915065705549
 SpriteRenderer:

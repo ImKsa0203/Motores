@@ -39,7 +39,7 @@ public class Player : Entity
 
     protected override void Die()
     {
-        //pantalla muerte
+        Time.timeScale = 0;
     }
 
     public void Horizontal(InputAction.CallbackContext CallbackContext)
