@@ -7,7 +7,7 @@ using UnityEngine.InputSystem.Controls;
 public class Entity : MonoBehaviour, IDamageable
 {
     [Header("Stats")]
-    [SerializeField] private int _health = 100;
+    [SerializeField] protected int _health = 100;
     [SerializeField] private float _speed = 3;
     [SerializeField] public int damage = 25;
     [SerializeField] private int _jumps = 1;

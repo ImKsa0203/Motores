@@ -26,16 +26,19 @@ public class Player : Entity
 
     private void Update()
     {
-        Vector3 direction = _camera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        _weapon.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg));
+        if (_health > 0)
+        {
+            Vector3 direction = _camera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            _weapon.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg));
 
-        if (_weapon.eulerAngles.z > 90 && _weapon.eulerAngles.z < 270 )
-        {
-            _weapon.localScale = new Vector3(1, -1, 1);
-        }
-        else
-        {
-            _weapon.localScale = new Vector3(1, 1, 1);
+            if (_weapon.eulerAngles.z > 90 && _weapon.eulerAngles.z < 270)
+            {
+                _weapon.localScale = new Vector3(1, -1, 1);
+            }
+            else
+            {
+                _weapon.localScale = new Vector3(1, 1, 1);
+            }
         }
     }
 
