@@ -4,7 +4,7 @@ using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.InputSystem.Controls;
 
-public class Entity : MonoBehaviour, IDamageable
+public abstract class Entity : MonoBehaviour, IDamageable
 {
     [Header("Stats")]
     [SerializeField] protected int _health = 100;

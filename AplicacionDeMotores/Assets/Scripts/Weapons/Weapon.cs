@@ -7,7 +7,7 @@ public abstract class Weapon : MonoBehaviour
     [Header("Stats")]
     public int damage = 10;
     public bool isEnemy = true;
-    [SerializeField] private float _fireRate = 1;
+    public float fireRate = 1;
     [SerializeField] protected bool _automatic = true;
     [SerializeField] private float _abilityCooldown = 5;
     [Header("Refs")]
@@ -34,7 +34,7 @@ public abstract class Weapon : MonoBehaviour
             {
                 Shoot();
                 canShoot = false;
-                yield return new WaitForSeconds(_fireRate);
+                yield return new WaitForSeconds(fireRate);
                 canShoot = true;
             }
             else
