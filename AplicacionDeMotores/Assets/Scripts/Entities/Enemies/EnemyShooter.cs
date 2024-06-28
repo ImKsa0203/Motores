@@ -9,7 +9,7 @@ public class EnemyShooter : Enemy
     [Header("Refs")]
     [SerializeField] private Transform _weapon;
     [SerializeField] private GameObject _projectilePrefab;
-    private Weapon _weapon2;
+    [SerializeField] private Weapon _weapon2;
 
     private void Start()
     {

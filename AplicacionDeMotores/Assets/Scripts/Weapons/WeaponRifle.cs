@@ -9,7 +9,7 @@ public class WeaponRifle : Weapon
         CreateProjectile(_projectilePrefab, _firePoint.position, _rotation.rotation);
     }
 
-    protected override void Skill()
+    public override void Skill()
     {
         for (int i = -2; i <= 2; i++)
         {

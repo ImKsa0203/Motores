@@ -5,15 +5,8 @@ using UnityEngine;
 public class WeaponManager : MonoBehaviour
 {
     [Header("Weapon")]
-    [SerializeField] private Weapon[] _weapons;
-    public int weaponSelected = 0;
-    [Header("Refs")]
-    public Entity scEntity;
-
-    private void Awake()
-    {
-        scEntity = GetComponentInParent<Entity>();
-    }
+    [SerializeField] public Weapon[] _weapons;
+    [SerializeField] public int weaponSelected = 0;
 
     private void Start()
     {
@@ -29,11 +22,16 @@ public class WeaponManager : MonoBehaviour
         _weapons[weaponSelected].CancelAutomatic();
     }
 
+    public void Skill()
+    {
+        _weapons[weaponSelected].Skill();
+    }
+
     public void ChangeWeaponSelected(int Selected)
     {
         _weapons[weaponSelected].CancelAutomatic();
         weaponSelected = Selected;
-        for (int i = 0; i < _weapons.Length; i++) // Se que no es necesario hacer un for, pero lo hago escalable para que se puedan poner mas armas
+        for (int i = 0; i < _weapons.Length; i++) // Se que no es necesario hacer un for (con un if ya esta listo), pero lo hago escalable para que se puedan poner mas armas
         {
             if (weaponSelected == i)
             {

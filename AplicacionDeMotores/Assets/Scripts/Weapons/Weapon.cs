@@ -48,7 +48,7 @@ public abstract class Weapon : MonoBehaviour
 
     protected abstract void Shoot();
 
-    protected abstract void Skill();
+    public abstract void Skill();
 
     protected GameObject CreateProjectile(GameObject prefab, Vector3 position, Quaternion rotation)
     {

@@ -57,6 +57,7 @@ MonoBehaviour:
   _fireRate: 2
   _weapon: {fileID: 6893097917760267952}
   _projectilePrefab: {fileID: 7697130245237819586, guid: 693fe0a02c6a1f5409e89f16585b2979, type: 3}
+  _weapon2: {fileID: 8769342727092903307}
 --- !u!61 &2728154107181870235
 BoxCollider2D:
   m_ObjectHideFlags: 0

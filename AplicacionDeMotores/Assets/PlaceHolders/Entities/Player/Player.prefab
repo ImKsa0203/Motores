@@ -45,11 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1262931a85f0f42458b5bd7558b17cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
+  isEnemy: 0
   _fireRate: 0.5
   _automatic: 0
   _projectilePrefab: {fileID: 7697130245237819586, guid: 1462fb6a52c493740a3869b97ed6938a, type: 3}
-  _weaponManager: {fileID: 8239780120371243018}
-  _shooting: 0
 --- !u!212 &5330023451625615575
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -242,7 +242,6 @@ MonoBehaviour:
   - {fileID: 6015292219142808900}
   - {fileID: 5476369071922696598}
   weaponSelected: 0
-  scEntity: {fileID: 8921137744836160235}
 --- !u!1 &5462296797633233348
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,11 +287,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c22be291e25d12438d8add3fd8fc466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
+  isEnemy: 0
   _fireRate: 1
   _automatic: 1
   _projectilePrefab: {fileID: 7697130245237819586, guid: 915aa34cdae39e64f899e2b30931dcf6, type: 3}
-  _weaponManager: {fileID: 8239780120371243018}
-  _shooting: 0
 --- !u!212 &5529971915065705549
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -602,6 +601,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 22a42c8a-3bd2-440e-abd8-8f5d81f7981c
     m_ActionName: Default/Weapon2[/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8921137744836160235}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: Skill
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5df03096-4b1e-4964-a9a4-e1ccd8ed5a60
+    m_ActionName: Default/Skill[/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Default

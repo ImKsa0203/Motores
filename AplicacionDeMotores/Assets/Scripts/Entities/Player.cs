@@ -78,4 +78,12 @@ public class Player : Entity
             _weaponManager.Cancel();
         }
     }
+
+    public void Skill(InputAction.CallbackContext CallbackContext)
+    {
+        if (CallbackContext.performed)
+        {
+            _weaponManager.Skill();
+        }
+    }
 }

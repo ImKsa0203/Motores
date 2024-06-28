@@ -9,11 +9,11 @@ public class WeaponGranade : Weapon
         CreateProjectile(_projectilePrefab, _firePoint.position, _rotation.rotation);
     }
 
-    protected override void Skill()
+    public override void Skill()
     {
-        for (int i = -2; i <= 2; i++)
+        for (int i = -3; i <= 3; i++)
         {
-            CreateProjectile(_projectilePrefab, _firePoint.position + i * _rotation.up - 2 * _rotation.right, _rotation.rotation);
+            CreateProjectile(_projectilePrefab, _firePoint.position, _rotation.rotation * Quaternion.Euler(0, 0, 5 * i));
         }
     }
 }
