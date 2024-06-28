@@ -4,18 +4,10 @@ using UnityEngine;
 
 public class EnemyShooter : Enemy
 {
-    [Header("Stats")]
-    [SerializeField] private float _fireRate = 3;
     [Header("Refs")]
     [SerializeField] private GameObject _projectilePrefab;
     [SerializeField] private Transform _weaponTransform;
     [SerializeField] private Weapon _weaponScript;
-
-    protected override void Awake()
-    {
-        base.Awake();
-        _weaponScript.fireRate = _fireRate;
-    }
 
     protected override void Update()
     {

@@ -14,8 +14,7 @@ public class Canon : MonoBehaviour
 
     private void Awake()
     {
-        _weapon.damage = _damage;
-        _weapon.isEnemy = true;
+        _weapon.setStats(_damage, true);
     }
 
     private void Start()

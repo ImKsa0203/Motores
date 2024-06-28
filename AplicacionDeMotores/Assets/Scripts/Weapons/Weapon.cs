@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,9 +6,9 @@ using UnityEngine;
 public abstract class Weapon : MonoBehaviour
 {
     [Header("Stats")]
-    public int damage = 10;
-    public bool isEnemy = true;
-    public float fireRate = 1;
+    private int _damage = 10;
+    private bool _isEnemy = true;
+    [SerializeField] private float _fireRate = 1;
     [SerializeField] protected bool _automatic = true;
     [SerializeField] private float _abilityCooldown = 5;
     [Header("Refs")]
@@ -26,6 +27,12 @@ public abstract class Weapon : MonoBehaviour
         _cooldown.ResetCooldown();
     }
 
+    public void setStats(int damage, bool isEnemy)
+    {
+        _damage = damage;
+        _isEnemy = isEnemy;
+    }
+
     protected IEnumerator ShootCoroutine()
     {
         while (_shooting)
@@ -34,7 +41,7 @@ public abstract class Weapon : MonoBehaviour
             {
                 Shoot();
                 canShoot = false;
-                yield return new WaitForSeconds(fireRate);
+                yield return new WaitForSeconds(_fireRate);
                 canShoot = true;
             }
             else
@@ -75,8 +82,8 @@ public abstract class Weapon : MonoBehaviour
     {
         GameObject projectileInstance = Instantiate(prefab, position, rotation);
         Projectile projectile = projectileInstance.GetComponent<Projectile>();
-        projectile.damage = damage;
-        projectile.isEnemy = isEnemy;
+        projectile.damage = _damage;
+        projectile.isEnemy = _isEnemy;
         return projectileInstance;
     }
 
