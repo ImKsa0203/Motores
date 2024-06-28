@@ -16,6 +16,16 @@ public class EnemyMelee : Enemy
         _attackObject.SetActive(false);
     }
 
+    public override void StartAttack()
+    {
+        Attack();
+    }
+
+    public override void CancelAttack()
+    {
+        CancelInvoke("Attack");
+    }
+
     public void Attack()
     {
         _attackObject.SetActive(true);
@@ -28,10 +38,5 @@ public class EnemyMelee : Enemy
     private void DeactivateCollider()
     {
         _attackObject.SetActive(false);
-    }
-
-    public void CancelAttack()
-    {
-        CancelInvoke("Attack");
     }
 }

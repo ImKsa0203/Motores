@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : Entity
+public abstract class Enemy : Entity
 {
     protected Transform _target;
     protected bool _follow = true;
+
+
 
     protected override void Awake()
     {
@@ -30,4 +32,7 @@ public class Enemy : Entity
             }
         }
     }
+
+    public abstract void StartAttack();
+    public abstract void CancelAttack();
 }

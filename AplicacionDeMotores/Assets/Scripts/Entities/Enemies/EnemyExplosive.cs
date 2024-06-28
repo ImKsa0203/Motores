@@ -9,9 +9,13 @@ public class EnemyExplosive : Enemy
     [Header("Refs")]
     [SerializeField] private GameObject _explosion;
 
-    public void Exploding()
+    public override void StartAttack()
     {
         Invoke("Die", _timeToExplode);
+    }
+    public override void CancelAttack()
+    {
+        CancelInvoke("Die");
     }
 
     protected override void Die()

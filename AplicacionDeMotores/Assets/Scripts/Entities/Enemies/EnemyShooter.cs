@@ -7,28 +7,32 @@ public class EnemyShooter : Enemy
     [Header("Stats")]
     [SerializeField] private float _fireRate = 2;
     [Header("Refs")]
-    [SerializeField] private Transform _weapon;
     [SerializeField] private GameObject _projectilePrefab;
-    [SerializeField] private Weapon _weapon2;
-
-    private void Start()
-    {
-        _weapon2.StartShoot();
-    }
+    [SerializeField] private Transform _weaponTransform;
+    [SerializeField] private Weapon _weaponScript;
 
     protected override void Update()
     {
         base.Update();
         Vector3 direction = _target.position - transform.position;
-        _weapon.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg));
+        _weaponTransform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg));
 
-        if (_weapon.eulerAngles.z > 90 && _weapon.eulerAngles.z < 270)
+        if (_weaponTransform.eulerAngles.z > 90 && _weaponTransform.eulerAngles.z < 270)
         {
-            _weapon.localScale = new Vector3(2, -2, 2);
+            _weaponTransform.localScale = new Vector3(2, -2, 2);
         }
         else
         {
-            _weapon.localScale = new Vector3(2, 2, 2);
+            _weaponTransform.localScale = new Vector3(2, 2, 2);
         }
+    }
+
+    public override void StartAttack()
+    {
+        _weaponScript.StartShoot();
+    }
+    public override void CancelAttack()
+    {
+        _weaponScript.CancelShoot();
     }
 }
