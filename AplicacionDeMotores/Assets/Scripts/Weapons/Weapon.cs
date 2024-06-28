@@ -12,6 +12,7 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] private float _abilityCooldown = 5;
     [Header("Refs")]
     [SerializeField] protected GameObject _projectilePrefab;
+    [Header("Internal")]
     protected Transform _rotation;
     protected Transform _firePoint;
     private bool _shooting = false;
