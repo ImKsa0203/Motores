@@ -13,6 +13,8 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] protected GameObject _projectilePrefab;
     protected Transform _rotation;
     protected Transform _firePoint;
+    private bool _shooting = false;
+    private bool _canShoot = true;
 
     private void Awake()
     {
@@ -22,19 +24,29 @@ public abstract class Weapon : MonoBehaviour
 
     protected IEnumerator ShootCoroutine()
     {
-        Shoot();
-        if (_automatic)
+        while (_shooting)
         {
-            yield return new WaitForSeconds(_fireRate);
-        }
-        else
-        {
-            yield break;
+            if (_canShoot)
+            {
+                Shoot();
+
+                if (_automatic)
+                {
+                    _canShoot = false;
+                    yield return new WaitForSeconds(_fireRate);
+                    _canShoot = true;
+                }
+                else
+                {
+                    yield break;
+                }
+            }
         }
     }
 
     public void StartShoot()
     {
+        _shooting = true;
         if (ShootCoroutine() != null)
         {
             StartCoroutine(ShootCoroutine());
@@ -43,7 +55,7 @@ public abstract class Weapon : MonoBehaviour
 
     public void CancelAutomatic()
     {
-        StopCoroutine(ShootCoroutine());
+        _canShoot = false;
     }
 
     protected abstract void Shoot();
