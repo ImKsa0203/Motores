@@ -43,7 +43,7 @@ public abstract class Weapon : MonoBehaviour
             }
             else
             {
-                yield return null;
+                yield break;
             }
         }
     }
@@ -56,7 +56,7 @@ public abstract class Weapon : MonoBehaviour
 
     public void CancelAutomatic()
     {
-        _canShoot = false;
+        _shooting = false;
     }
 
     protected abstract void Shoot();
