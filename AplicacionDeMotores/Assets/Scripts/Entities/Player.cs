@@ -15,6 +15,13 @@ public class Player : Entity
     {
         base.Awake();
         isEnemy = false;
+        _weaponManager.GetComponentInChildren<WeaponManager>();
+        _camera = GetComponentInChildren<Camera>();
+        for (int i = 0; i < _weaponManager._weapons.Length; i++)
+        {
+            _weaponManager._weapons[i].damage = damage;
+            _weaponManager._weapons[i].isEnemy = isEnemy;
+        }
     }
 
     private void Update()
@@ -79,11 +86,11 @@ public class Player : Entity
         }
     }
 
-    public void Skill(InputAction.CallbackContext CallbackContext)
+    public void Ability(InputAction.CallbackContext CallbackContext)
     {
         if (CallbackContext.performed)
         {
-            _weaponManager.Skill();
+            _weaponManager.Ability();
         }
     }
 }

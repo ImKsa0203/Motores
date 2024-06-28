@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public abstract class Projectile : MonoBehaviour, IDamageable
 {
     [Header("Stats")]
     [SerializeField] public float gravity = 0;
@@ -22,4 +22,11 @@ public class Projectile : MonoBehaviour
         _rigidbody2D.velocity = transform.right * speed;
         Destroy(gameObject, timeToDestroy);
     }
+
+    public void TakeDamage(int damage)
+    {
+        OnDamage();
+    }
+
+    protected abstract void OnDamage();
 }

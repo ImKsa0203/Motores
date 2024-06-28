@@ -6,17 +6,31 @@ public class ProjectileDamage : Projectile
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Entity entity = collision.GetComponent<Entity>();
-        if (entity)
+        IDamageable damagable = collision.GetComponent<IDamageable>();
+        if (damagable != null)
         {
-            if (entity.isEnemy != isEnemy)
+            Entity entity = collision.GetComponent<Entity>();
+            if (entity)
             {
-                entity.TakeDamage(damage);
+                if (entity.isEnemy != isEnemy)
+                {
+                    damagable.TakeDamage(damage);
+                }
             }
+            else
+            {
+                damagable.TakeDamage(damage);
+            } 
         }
+
         if (_collitionLayerMask == (_collitionLayerMask | (1 << collision.gameObject.layer)))
         {
             Destroy(gameObject);
         }
+    }
+
+    protected override void OnDamage()
+    {
+        Destroy(gameObject);
     }
 }

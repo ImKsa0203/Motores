@@ -12,12 +12,12 @@ public class Spike : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        Entity scEntity = other.GetComponent<Entity>();
-        if (scEntity != null)
+        IDamageable damagable = other.GetComponent<IDamageable>();
+        if (damagable != null)
         {
             if (_cooldown.IsReady)
             {
-                scEntity.TakeDamage(_damage);
+                damagable.TakeDamage(_damage);
                 _cooldown.StartCooldown(_damageInterval);
             }
         }

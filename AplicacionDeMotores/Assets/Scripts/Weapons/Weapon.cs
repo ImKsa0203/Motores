@@ -9,37 +9,32 @@ public abstract class Weapon : MonoBehaviour
     public bool isEnemy = true;
     [SerializeField] private float _fireRate = 1;
     [SerializeField] protected bool _automatic = true;
+    [SerializeField] private float _abilityCooldown = 5;
     [Header("Refs")]
     [SerializeField] protected GameObject _projectilePrefab;
     protected Transform _rotation;
     protected Transform _firePoint;
     private bool _shooting = false;
-    private bool _canShoot = true;
+    public bool canShoot = true;
+    private Cooldown _cooldown = new Cooldown();
 
     private void Awake()
     {
         _rotation = GetComponentInParent<Transform>();
         _firePoint = GetComponentInChildren<Transform>();
+        _cooldown.ResetCooldown();
     }
 
     protected IEnumerator ShootCoroutine()
     {
         while (_shooting)
         {
-            if (_canShoot)
+            if (canShoot)
             {
                 Shoot();
-
-                if (_automatic)
-                {
-                    _canShoot = false;
-                    yield return new WaitForSeconds(_fireRate);
-                    _canShoot = true;
-                }
-                else
-                {
-                    yield break;
-                }
+                canShoot = false;
+                yield return new WaitForSeconds(_fireRate);
+                canShoot = true;
             }
             else
             {
@@ -54,14 +49,26 @@ public abstract class Weapon : MonoBehaviour
         StartCoroutine(ShootCoroutine());
     }
 
-    public void CancelAutomatic()
+    public void CancelShoot()
     {
         _shooting = false;
     }
 
-    protected abstract void Shoot();
+    private void Shoot()
+    {
+        CreateProjectile(_projectilePrefab, _firePoint.position, _rotation.rotation);
+    }
 
-    public abstract void Skill();
+    public void TryAbility()
+    {
+        if (_cooldown.IsReady)
+        {
+            Ability();
+            _cooldown.StartCooldown(_abilityCooldown);
+        }
+    }
+
+    protected abstract void Ability();
 
     protected GameObject CreateProjectile(GameObject prefab, Vector3 position, Quaternion rotation)
     {

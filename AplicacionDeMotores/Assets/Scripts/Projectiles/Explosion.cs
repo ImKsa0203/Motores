@@ -14,10 +14,10 @@ public class Explosion : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Entity entity = collision.GetComponent<Entity>();
-        if (entity)
+        IDamageable damagable = collision.GetComponent<IDamageable>();
+        if (damagable != null)
         {
-            entity.TakeDamage(damage);
+            damagable.TakeDamage(damage);
         }
     }
 }

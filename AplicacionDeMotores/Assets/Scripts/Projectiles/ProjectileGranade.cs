@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ProjectileGranade : Projectile
+public class ProjectileGranade : ProjectileExplosive
 {
     [Header("Stats")]
     [SerializeField] private float _inicialTorque = -5;
     [SerializeField] private float _timeToExplode = 1;
-    [Header("Refs")]
-    [SerializeField] private GameObject _explosion;
     private bool _exploding = false;
 
     private void Start()
@@ -24,12 +22,5 @@ public class ProjectileGranade : Projectile
             Invoke("Explode", _timeToExplode);
             _exploding = true;
         }
-    }
-
-    private void Explode()
-    {
-        GameObject explosion = Instantiate(_explosion, transform.position, Quaternion.identity);
-        explosion.GetComponent<Explosion>().damage = damage;
-        Destroy(gameObject);
     }
 }

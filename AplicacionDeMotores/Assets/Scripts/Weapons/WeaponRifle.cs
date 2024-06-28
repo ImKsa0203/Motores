@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class WeaponRifle : Weapon
 {
-    protected override void Shoot()
-    {
-        CreateProjectile(_projectilePrefab, _firePoint.position, _rotation.rotation);
-    }
-
-    public override void Skill()
+    protected override void Ability()
     {
         for (int i = -2; i <= 2; i++)
         {
