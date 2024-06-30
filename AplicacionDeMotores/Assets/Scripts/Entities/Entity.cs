@@ -7,7 +7,8 @@ using UnityEngine.InputSystem.Controls;
 public abstract class Entity : MonoBehaviour, IDamageable
 {
     [Header("Stats")]
-    [SerializeField] protected int _health = 100;
+    [SerializeField] protected int _maxHealth = 100;
+    protected int _health;
     [SerializeField] private float _speed = 3;
     [SerializeField] protected int _damage { get; private set; } = 10;
     [SerializeField] private int _jumps = 1;
@@ -22,6 +23,7 @@ public abstract class Entity : MonoBehaviour, IDamageable
 
     protected virtual void Awake()
     {
+        _health = _maxHealth;
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _jumpLeft = _jumps;
@@ -59,10 +61,7 @@ public abstract class Entity : MonoBehaviour, IDamageable
         _health += healing;
     }
 
-    protected virtual void Die()
-    {
-        Destroy(gameObject);
-    }
+    protected abstract void Die();
 
     protected void Jump()
     {

@@ -12,7 +12,8 @@ public abstract class Enemy : Entity
     protected override void Awake()
     {
         base.Awake();
-        _target = FindAnyObjectByType<Player>().transform;
+        //_target = FindAnyObjectByType<Player>().transform; // Mal
+        _target = Player.player.transform;
         isEnemy = true;
     }
 
@@ -31,6 +32,11 @@ public abstract class Enemy : Entity
                     break;
             }
         }
+    }
+
+    protected override void Die()
+    {
+        Destroy(gameObject);
     }
 
     public abstract void StartAttack();
