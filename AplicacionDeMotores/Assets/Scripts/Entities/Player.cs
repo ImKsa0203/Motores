@@ -11,9 +11,13 @@ public class Player : Entity
     [SerializeField] private Transform _weapon;
     [SerializeField] private Camera _camera;
 
+
+    public static Player player;
+
     protected override void Awake()
     {
         base.Awake();
+        player = this;
         isEnemy = false;
         _weaponManager.GetComponentInChildren<WeaponManager>();
         _camera = GetComponentInChildren<Camera>();
