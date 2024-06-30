@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     
     public static int lives = 3;
     public static int itemsPicked = 0;
-    public static Transform checkpoint;
+    public Transform checkpoint;
 
     private void Awake()
     {
@@ -25,18 +25,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Sistema de checkpoints --> NO FUNCIONAL
+    /*
     public void LoadCheckpoint(Player player)
     {
         if (checkpoint != null)
         {
             player.transform.position = checkpoint.position;
-            player.transform.rotation = checkpoint.rotation;
+            //player.transform.rotation = checkpoint.rotation;
         }
         else
         {
             Debug.LogWarning("Checkpoint is not set.");
         }
     }
+    */
 
     public void ResetLevel()
     {

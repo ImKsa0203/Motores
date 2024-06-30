@@ -106,4 +106,26 @@ public class Player : Entity
             _weaponManager.Ability();
         }
     }
+
+
+    //Sistema de checkpoints --> NO FUNCIONAL
+
+    /*
+    private void OnTriggerEnter(Collider other)
+    {
+        Checkpoint checkpoint = other.GetComponent<Checkpoint>();
+
+        if (checkpoint != null)
+        {
+            GameManager.instance.checkpoint = checkpoint.transform;
+
+            Debug.Log("Checkpoint = " + checkpoint.checkpointNum);
+        }
+    }
+
+    public void Respawn()
+    {
+        GameManager.instance.LoadCheckpoint(this);
+    }
+    */
 }
