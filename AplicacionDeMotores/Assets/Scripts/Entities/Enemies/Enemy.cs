@@ -33,6 +33,11 @@ public abstract class Enemy : Entity
         }
     }
 
+    protected override void Die()
+    {
+        Destroy(gameObject);
+    }
+
     public abstract void StartAttack();
     public abstract void CancelAttack();
 }

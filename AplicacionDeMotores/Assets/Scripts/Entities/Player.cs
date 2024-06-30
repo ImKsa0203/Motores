@@ -48,7 +48,14 @@ public class Player : Entity
 
     protected override void Die()
     {
-        Time.timeScale = 0;
+        GameManager.lives--;
+        _health = _maxHealth;
+        // Aca hay que hacer un transform al ultimo checkpoint
+
+        if (GameManager.lives <= 0)
+        {
+            GameManager.instance.ResetLevel();
+        }
     }
 
     public void Horizontal(InputAction.CallbackContext CallbackContext)
