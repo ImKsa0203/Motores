@@ -41,6 +41,10 @@ public abstract class Weapon : MonoBehaviour
             {
                 Shoot();
                 CanShoot(false);
+                if (!_automatic)
+                {
+                    _shooting = false;
+                }
                 yield return new WaitForSeconds(_fireRate);
                 CanShoot(true);
             }
