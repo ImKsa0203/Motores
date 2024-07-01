@@ -56,9 +56,9 @@ MonoBehaviour:
   _collitionLayerMask:
     serializedVersion: 2
     m_Bits: 128
+  _explosion: {fileID: 2613653543182174268, guid: 6578b53bf1f6ad1418e05dfbb1962980, type: 3}
   _inicialTorque: -5
   _timeToExplode: 1
-  _explosion: {fileID: 2613653543182174268, guid: 6578b53bf1f6ad1418e05dfbb1962980, type: 3}
 --- !u!58 &-3202060592350787792
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -106,7 +106,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.2
   m_LinearDrag: 0
   m_AngularDrag: 2
   m_GravityScale: 1

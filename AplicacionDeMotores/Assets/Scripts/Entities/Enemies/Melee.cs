@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMelee : Enemy
+public class Melee : Enemy
 {
     [Header("Stats")]
     [SerializeField] private float _fireRate = 2;
     [SerializeField] private float _timeAttacking = 0.5f;
     [Header("Refs")]
     [SerializeField] private GameObject _attackObject;
+    [SerializeField] private MeleeDmg _meleeDmg;
 
     protected override void Awake()
     {
         base.Awake();
         _attackObject.SetActive(false);
+        _meleeDmg.damage = _damage;
+        _meleeDmg.isEnemy = isEnemy;
     }
 
     public override void StartAttack()

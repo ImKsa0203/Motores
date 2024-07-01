@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyShooter : Enemy
+public class Shooter : Enemy
 {
     [Header("Refs")]
     [SerializeField] private GameObject _projectilePrefab;

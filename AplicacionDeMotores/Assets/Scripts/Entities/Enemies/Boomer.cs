@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyExplosive : Enemy
+public class Boomer : Enemy
 {
     [Header("Stats")]
     [SerializeField] private float _timeToExplode = 1;

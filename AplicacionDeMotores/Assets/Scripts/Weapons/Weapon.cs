@@ -20,7 +20,7 @@ public abstract class Weapon : MonoBehaviour
     public bool canShoot = true;
     private Cooldown _cooldown = new Cooldown();
 
-    private void Awake()
+    protected virtual void Awake()
     {
         _rotation = GetComponentInParent<Transform>();
         _firePoint = GetComponentInChildren<Transform>();
@@ -40,9 +40,9 @@ public abstract class Weapon : MonoBehaviour
             if (canShoot)
             {
                 Shoot();
-                canShoot = false;
+                CanShoot(false);
                 yield return new WaitForSeconds(_fireRate);
-                canShoot = true;
+                CanShoot(true);
             }
             else
             {
@@ -60,6 +60,11 @@ public abstract class Weapon : MonoBehaviour
     public void CancelShoot()
     {
         _shooting = false;
+    }
+
+    protected virtual void CanShoot(bool action)
+    {
+        canShoot = action;
     }
 
     private void Shoot()
