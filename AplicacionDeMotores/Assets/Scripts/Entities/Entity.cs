@@ -10,7 +10,7 @@ public abstract class Entity : MonoBehaviour, IDamageable
     [SerializeField] protected int _maxHealth = 100;
     protected int _health;
     [SerializeField] private float _speed = 3;
-    [SerializeField] protected int _damage { get; private set; } = 10;
+    [SerializeField] protected int _damage = 10;
     [SerializeField] private int _jumps = 1;
     [Header("Refs")]
     [SerializeField] protected SpriteRenderer _spriteRenderer;
