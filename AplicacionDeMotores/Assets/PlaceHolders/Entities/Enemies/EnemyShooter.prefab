@@ -49,13 +49,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 008baee87c5d6e74ea90f63f6a8b4aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 50
+  _maxHealth: 25
+  _health: 25
   _speed: 1.5
-  damage: 10
+  _damage: 10
   _jumps: 1
   _spriteRenderer: {fileID: 3514099023765400372}
   isEnemy: 1
-  _fireRate: 2
   _projectilePrefab: {fileID: 7697130245237819586, guid: 693fe0a02c6a1f5409e89f16585b2979, type: 3}
   _weaponTransform: {fileID: 6893097917760267952}
   _weaponScript: {fileID: 8769342727092903307}

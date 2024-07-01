@@ -49,9 +49,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb50f937d8434534ca2e4559d145d379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 100
+  _maxHealth: 50
+  _health: 50
   _speed: 3
-  damage: 25
+  _damage: 10
   _jumps: 1
   _spriteRenderer: {fileID: 3514099023765400372}
   isEnemy: 1
