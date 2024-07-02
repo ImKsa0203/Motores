@@ -9,11 +9,11 @@ public class Boomer : Enemy
     [Header("Refs")]
     [SerializeField] private GameObject _explosion;
 
-    public override void StartAttack()
+    protected override void StartAttack()
     {
         Invoke("Die", _timeToExplode);
     }
-    public override void CancelAttack()
+    protected override void CancelAttack()
     {
         CancelInvoke("Die");
     }

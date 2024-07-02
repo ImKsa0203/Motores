@@ -7,8 +7,6 @@ public abstract class Enemy : Entity
     protected Transform _target;
     protected bool _follow = true;
 
-
-
     protected override void Awake()
     {
         base.Awake();
@@ -21,15 +19,11 @@ public abstract class Enemy : Entity
     {
         if (_target && _follow)
         {
+            int lastDirection = direction;
             direction = (int)Mathf.Sign(_target.position.x - transform.position.x);
-            switch (direction)
+            if (lastDirection != direction)
             {
-                case -1:
-                    _spriteRenderer.flipX = false;
-                    break;
-                case 1:
-                    _spriteRenderer.flipX = true;
-                    break;
+                LookSprite();
             }
         }
     }
@@ -39,6 +33,6 @@ public abstract class Enemy : Entity
         Destroy(gameObject);
     }
 
-    public abstract void StartAttack();
-    public abstract void CancelAttack();
+    protected abstract void StartAttack();
+    protected abstract void CancelAttack();
 }

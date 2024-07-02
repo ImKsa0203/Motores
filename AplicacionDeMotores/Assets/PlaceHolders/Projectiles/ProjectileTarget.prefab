@@ -48,14 +48,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3ac65d8ec723e4683108a7f3f41307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 0
-  speed: 8
-  timeToDestroy: 10
-  damage: 0
-  isEnemy: 1
-  _collitionLayerMask:
+  _speed: 10
+  _timeToDestroy: 10
+  _damage: 0
+  _isEnemy: 0
+  _collition:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 896
   angularSpeed: 3
   target: {fileID: 0}
 --- !u!70 &8473821144406554273
@@ -108,7 +107,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

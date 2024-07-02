@@ -90,9 +90,7 @@ public abstract class Weapon : MonoBehaviour
     protected GameObject CreateProjectile(GameObject prefab, Vector3 position, Quaternion rotation)
     {
         GameObject projectileInstance = Instantiate(prefab, position, rotation);
-        Projectile projectile = projectileInstance.GetComponent<Projectile>();
-        projectile.damage = _damage;
-        projectile.isEnemy = _isEnemy;
+        projectileInstance.GetComponent<Projectile>().SetStats(_damage, _isEnemy);
         return projectileInstance;
     }
 

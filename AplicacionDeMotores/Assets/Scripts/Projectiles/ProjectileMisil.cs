@@ -12,9 +12,9 @@ public class ProjectileMisil : ProjectileExplosive
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (_collitionLayerMask == (_collitionLayerMask | (1 << collision.gameObject.layer)))
+        if (_collition == (_collition | (1 << collision.gameObject.layer)))
         {
-            Explode();
+            DestroyProjectile();
         }
     }
 }

@@ -19,17 +19,17 @@ public class Melee : Enemy
         _meleeDmg.isEnemy = isEnemy;
     }
 
-    public override void StartAttack()
+    protected override void StartAttack()
     {
         Attack();
     }
 
-    public override void CancelAttack()
+    protected override void CancelAttack()
     {
         CancelInvoke("Attack");
     }
 
-    public void Attack()
+    private void Attack()
     {
         _attackObject.SetActive(true);
         Vector3 direction = _target.position - transform.position;

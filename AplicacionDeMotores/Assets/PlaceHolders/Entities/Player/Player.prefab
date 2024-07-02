@@ -45,10 +45,10 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2944
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 5239
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -283,15 +283,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 758badc8cf2787e4884bce477e06257c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxHealth: 100
   _health: 100
   _speed: 5
-  damage: 25
+  _damage: 10
   _jumps: 1
-  _spriteRenderer: {fileID: 4610608098527455380}
   isEnemy: 0
-  _weaponManager: {fileID: 8239780120371243018}
   _weapon: {fileID: 1704917899800125010}
-  _camera: {fileID: 3798370600635141390}
 --- !u!114 &7230135336145808169
 MonoBehaviour:
   m_ObjectHideFlags: 0

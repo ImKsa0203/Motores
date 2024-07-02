@@ -5,22 +5,26 @@ using UnityEngine;
 public abstract class Projectile : MonoBehaviour, IDamageable
 {
     [Header("Stats")]
-    [SerializeField] public float gravity = 0;
-    [SerializeField] public float speed = 10;
-    [SerializeField] protected float timeToDestroy = 10;
+    [SerializeField] private float _speed = 10;
+    [SerializeField] protected float _timeToDestroy = 10;
     [Header("AutoDef")]
-    [SerializeField] public int damage = 0;
-    [SerializeField] public bool isEnemy = false;
+    [SerializeField] protected int _damage = 0;
+    [SerializeField] protected bool _isEnemy = false;
     [Header("Refs")]
-    [SerializeField] protected LayerMask _collitionLayerMask;
+    [SerializeField] protected LayerMask _collition;
     protected Rigidbody2D _rigidbody2D;
 
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        _rigidbody2D.gravityScale = gravity;
-        _rigidbody2D.velocity = transform.right * speed;
-        Destroy(gameObject, timeToDestroy);
+        _rigidbody2D.velocity = transform.right * _speed;
+        Invoke("DestroyProjectile", _timeToDestroy);
+    }
+
+    public void SetStats(int dmg, bool enemy)
+    {
+        _damage = dmg;
+        _isEnemy = enemy;
     }
 
     public void TakeDamage(int damage)
@@ -29,4 +33,9 @@ public abstract class Projectile : MonoBehaviour, IDamageable
     }
 
     protected abstract void OnDamage();
+
+    protected virtual void DestroyProjectile()
+    {
+        Destroy(gameObject);
+    }
 }

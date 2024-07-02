@@ -7,10 +7,9 @@ using UnityEngine.InputSystem;
 public class Player : Entity
 {
     [Header("Refs")]
-    [SerializeField] private WeaponManager _weaponManager;
     [SerializeField] private Transform _weapon;
-    [SerializeField] private Camera _camera;
-
+    private WeaponManager _weaponManager;
+    private Camera _camera;
 
     public static Player player;
 
@@ -19,7 +18,7 @@ public class Player : Entity
         base.Awake();
         player = this;
         isEnemy = false;
-        _weaponManager.GetComponentInChildren<WeaponManager>();
+        _weaponManager = GetComponentInChildren<WeaponManager>();
         _camera = GetComponentInChildren<Camera>();
         for (int i = 0; i < _weaponManager._weapons.Length; i++)
         {
@@ -67,15 +66,7 @@ public class Player : Entity
         if (CallbackContext.performed || CallbackContext.canceled)
         {
             direction = Mathf.RoundToInt(CallbackContext.ReadValue<float>());
-            switch (direction)
-            {
-                case -1:
-                    _spriteRenderer.flipX = false;
-                    break;
-                case 1:
-                    _spriteRenderer.flipX = true;
-                    break;
-            }
+            LookSprite();
         }
     }
 

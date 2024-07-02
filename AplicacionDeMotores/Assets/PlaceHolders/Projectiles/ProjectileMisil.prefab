@@ -48,14 +48,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c70c217ecc479f34f818e5f0983907c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 1
-  speed: 15
-  timeToDestroy: 10
-  damage: 0
-  isEnemy: 0
-  _collitionLayerMask:
+  _speed: 15
+  _timeToDestroy: 10
+  _damage: 0
+  _isEnemy: 0
+  _collition:
     serializedVersion: 2
-    m_Bits: 1920
+    m_Bits: 896
   _explosion: {fileID: 2613653543182174268, guid: 6578b53bf1f6ad1418e05dfbb1962980, type: 3}
 --- !u!70 &-9148664885155207999
 CapsuleCollider2D:

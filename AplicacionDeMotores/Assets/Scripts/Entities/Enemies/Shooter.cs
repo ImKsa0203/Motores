@@ -5,7 +5,6 @@ using UnityEngine;
 public class Shooter : Enemy
 {
     [Header("Refs")]
-    [SerializeField] private GameObject _projectilePrefab;
     [SerializeField] private Transform _weaponTransform;
     [SerializeField] private Weapon _weaponScript;
 
@@ -25,11 +24,11 @@ public class Shooter : Enemy
         }
     }
 
-    public override void StartAttack()
+    protected override void StartAttack()
     {
         _weaponScript.StartShoot();
     }
-    public override void CancelAttack()
+    protected override void CancelAttack()
     {
         _weaponScript.CancelShoot();
     }

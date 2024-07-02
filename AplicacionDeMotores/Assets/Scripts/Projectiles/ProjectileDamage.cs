@@ -12,25 +12,26 @@ public class ProjectileDamage : Projectile
             Entity entity = collision.GetComponent<Entity>();
             if (entity)
             {
-                if (entity.isEnemy != isEnemy)
+                if (entity.isEnemy != _isEnemy)
                 {
-                    damagable.TakeDamage(damage);
+                    damagable.TakeDamage(_damage);
+                    DestroyProjectile();
                 }
             }
             else
             {
-                damagable.TakeDamage(damage);
-            } 
+                damagable.TakeDamage(_damage);
+                DestroyProjectile();
+            }
         }
-
-        if (_collitionLayerMask == (_collitionLayerMask | (1 << collision.gameObject.layer)))
+        if (_collition == (_collition | (1 << collision.gameObject.layer)))
         {
-            Destroy(gameObject);
+            DestroyProjectile();
         }
     }
 
     protected override void OnDamage()
     {
-        Destroy(gameObject);
+        DestroyProjectile();
     }
 }

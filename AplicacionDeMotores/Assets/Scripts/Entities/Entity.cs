@@ -12,10 +12,9 @@ public abstract class Entity : MonoBehaviour, IDamageable
     [SerializeField] private float _speed = 3;
     [SerializeField] protected int _damage = 10;
     [SerializeField] private int _jumps = 1;
-    [Header("Refs")]
-    [SerializeField] protected SpriteRenderer _spriteRenderer;
+    [SerializeField] public bool isEnemy = false;
     [Header("Internal")]
-    public bool isEnemy = false;
+    protected SpriteRenderer _spriteRenderer;
     private int _jumpLeft;
     private bool _landed;
     protected int direction = 0;
@@ -58,7 +57,7 @@ public abstract class Entity : MonoBehaviour, IDamageable
 
     public void Heal(int healing)
     {
-        _health += healing;
+        _health += Mathf.Clamp(healing, 0, _maxHealth - _health);
     }
 
     protected abstract void Die();
@@ -85,6 +84,19 @@ public abstract class Entity : MonoBehaviour, IDamageable
         else
         {
             _jumpLeft--;
+        }
+    }
+
+    protected void LookSprite()
+    {
+        switch (direction)
+        {
+            case -1:
+                _spriteRenderer.flipX = false;
+                break;
+            case 1:
+                _spriteRenderer.flipX = true;
+                break;
         }
     }
 }
