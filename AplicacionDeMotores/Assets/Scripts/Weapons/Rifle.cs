@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponRifle : Weapon
+public class Rifle : Weapon
 {
     protected override void Ability()
     {

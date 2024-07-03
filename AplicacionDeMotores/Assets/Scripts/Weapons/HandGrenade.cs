@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponGranade : Weapon
+public class HandGrenade : Weapon
 {
     private SpriteRenderer _spriteRenderer;
 
