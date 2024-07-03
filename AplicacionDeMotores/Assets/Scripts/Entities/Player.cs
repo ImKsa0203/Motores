@@ -53,10 +53,13 @@ public class Player : Entity
     protected override void Die()
     {
         GameManager.lives--;
-        _health = _maxHealth;
-        // Aca hay que hacer un transform al ultimo checkpoint
 
-        if (GameManager.lives <= 0)
+        if (GameManager.lives > 0)
+        {
+            _health = _maxHealth;
+            GameManager.instance.LoadCheckpoint();
+        }
+        else
         {
             GameManager.instance.ResetLevel();
         }
@@ -99,25 +102,11 @@ public class Player : Entity
         }
     }
 
-
-    //Sistema de checkpoints --> NO FUNCIONAL
-
-    /*
-    private void OnTriggerEnter(Collider other)
+    public void Restart(InputAction.CallbackContext CallbackContext)
     {
-        Checkpoint checkpoint = other.GetComponent<Checkpoint>();
-
-        if (checkpoint != null)
+        if (CallbackContext.performed)
         {
-            GameManager.instance.checkpoint = checkpoint.transform;
-
-            Debug.Log("Checkpoint = " + checkpoint.checkpointNum);
+            GameManager.instance.ResetLevel();
         }
     }
-
-    public void Respawn()
-    {
-        GameManager.instance.LoadCheckpoint(this);
-    }
-    */
 }
