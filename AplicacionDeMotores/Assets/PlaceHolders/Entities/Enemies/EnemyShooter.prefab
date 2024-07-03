@@ -54,9 +54,7 @@ MonoBehaviour:
   _speed: 1.5
   _damage: 10
   _jumps: 1
-  _spriteRenderer: {fileID: 3514099023765400372}
   isEnemy: 1
-  _projectilePrefab: {fileID: 7697130245237819586, guid: 693fe0a02c6a1f5409e89f16585b2979, type: 3}
   _weaponTransform: {fileID: 6893097917760267952}
   _weaponScript: {fileID: 8769342727092903307}
 --- !u!61 &2728154107181870235
@@ -231,7 +229,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 1408
+    m_Bits: 3456
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
