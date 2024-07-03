@@ -15,12 +15,17 @@ public class Grenade : Explosive
         _rigidbody2D.AddTorque(_initialTorque);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (_collition == (_collition | (1 << collision.gameObject.layer)) && !_exploding)
         {
-            Invoke("DestroyProjectile", _timeToExplode);
+            Invoke("Delay", _timeToExplode);
             _exploding = true;
         }
+    }
+
+    private void Delay()
+    {
+        TakeDamage(1);
     }
 }
