@@ -13,7 +13,6 @@ public abstract class Entity : MonoBehaviour, IDamageable
     [SerializeField] protected int _damage = 10;
     [SerializeField] private int _jumps = 1;
     [SerializeField] public bool isEnemy = false;
-    [Header("Internal")]
     protected SpriteRenderer _spriteRenderer;
     private int _jumpLeft;
     private bool _landed;
