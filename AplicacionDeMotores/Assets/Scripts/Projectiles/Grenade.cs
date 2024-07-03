@@ -19,13 +19,8 @@ public class Grenade : Explosive
     {
         if (_collition == (_collition | (1 << collision.gameObject.layer)) && !_exploding)
         {
-            Invoke("Delay", _timeToExplode);
+            Invoke("InvokeDestroy", _timeToExplode);
             _exploding = true;
         }
-    }
-
-    private void Delay()
-    {
-        TakeDamage(1);
     }
 }

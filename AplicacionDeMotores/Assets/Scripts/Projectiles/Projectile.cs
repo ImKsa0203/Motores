@@ -18,7 +18,7 @@ public abstract class Projectile : MonoBehaviour, IDamageable
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _rigidbody2D.velocity = transform.right * _speed;
-        Invoke("DestroyProjectile", _timeToDestroy);
+        Invoke("InvokeDestroy", _timeToDestroy);
     }
 
     public void SetStats(int dmg, bool enemy)
@@ -30,5 +30,10 @@ public abstract class Projectile : MonoBehaviour, IDamageable
     public virtual void TakeDamage(int damage)
     {
         Destroy(gameObject);
+    }
+
+    protected void InvokeDestroy()
+    {
+        TakeDamage(1);
     }
 }
