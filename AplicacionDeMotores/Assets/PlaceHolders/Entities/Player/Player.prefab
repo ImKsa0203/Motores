@@ -139,7 +139,7 @@ MonoBehaviour:
   _weapons:
   - {fileID: 6015292219142808900}
   - {fileID: 5476369071922696598}
-  weaponSelected: 0
+  selected: 0
 --- !u!1 &6423147138329898895
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,8 +366,8 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8239780120371243018}
-        m_TargetAssemblyTypeName: ScWeaponManager, Assembly-CSharp
-        m_MethodName: ChangeWeaponSelected
+        m_TargetAssemblyTypeName: WeaponManager, Assembly-CSharp
+        m_MethodName: ChangeSelected
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -382,8 +382,8 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8239780120371243018}
-        m_TargetAssemblyTypeName: ScWeaponManager, Assembly-CSharp
-        m_MethodName: ChangeWeaponSelected
+        m_TargetAssemblyTypeName: WeaponManager, Assembly-CSharp
+        m_MethodName: ChangeSelected
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

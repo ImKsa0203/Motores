@@ -9,8 +9,8 @@ public abstract class Weapon : MonoBehaviour
     private int _damage = 10;
     private bool _isEnemy = true;
     [SerializeField] private float _fireRate = 1;
-    [SerializeField] protected bool _automatic = true;
-    [SerializeField] private float _abilityCooldown = 5;
+    [SerializeField] private bool _automatic = true;
+    [SerializeField] private float _abilityTime = 5;
     [Header("Refs")]
     [SerializeField] protected GameObject _projectilePrefab;
     [Header("Internal")]
@@ -18,16 +18,16 @@ public abstract class Weapon : MonoBehaviour
     protected Transform _firePoint;
     private bool _shooting = false;
     public bool canShoot = true;
-    private Cooldown _cooldown = new Cooldown();
+    private Cooldown _abilityCooldown = new Cooldown();
 
     protected virtual void Awake()
     {
         _rotation = GetComponentInParent<Transform>();
         _firePoint = GetComponentInChildren<Transform>();
-        _cooldown.ResetCooldown();
+        _abilityCooldown.ResetCooldown();
     }
 
-    public void setStats(int damage, bool isEnemy)
+    public void SetStats(int damage, bool isEnemy)
     {
         _damage = damage;
         _isEnemy = isEnemy;
@@ -55,6 +55,14 @@ public abstract class Weapon : MonoBehaviour
         }
     }
 
+    public IEnumerator Equip()
+    {
+        CanShoot(false);
+        yield return new WaitForSeconds(_fireRate);
+        CanShoot(true);
+        yield break;
+    }
+
     public void StartShoot()
     {
         _shooting = true;
@@ -78,10 +86,10 @@ public abstract class Weapon : MonoBehaviour
 
     public void TryAbility()
     {
-        if (_cooldown.IsReady)
+        if (_abilityCooldown.IsReady)
         {
             Ability();
-            _cooldown.StartCooldown(_abilityCooldown);
+            _abilityCooldown.StartCooldown(_abilityTime);
         }
     }
 
@@ -93,5 +101,4 @@ public abstract class Weapon : MonoBehaviour
         projectileInstance.GetComponent<Projectile>().SetStats(_damage, _isEnemy);
         return projectileInstance;
     }
-
 }

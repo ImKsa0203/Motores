@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ProjectileGranade : ProjectileExplosive
+public class Granade : Explosive
 {
     [Header("Stats")]
     [SerializeField] private float _initialTorque = -5;

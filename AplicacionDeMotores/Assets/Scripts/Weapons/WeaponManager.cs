@@ -6,42 +6,46 @@ public class WeaponManager : MonoBehaviour
 {
     [Header("Weapon")]
     [SerializeField] public Weapon[] _weapons;
-    [SerializeField] public int weaponSelected = 0;
+    [SerializeField] private int selected = 0;
 
     private void Start()
     {
-        ChangeWeaponSelected(weaponSelected);
+        ChangeSelected(selected);
     }
 
     public void Attack()
     {
-        _weapons[weaponSelected].StartShoot();
+        _weapons[selected].StartShoot();
     }
     public void Cancel()
     {
-        _weapons[weaponSelected].CancelShoot();
+        _weapons[selected].CancelShoot();
     }
 
     public void Ability()
     {
-        _weapons[weaponSelected].TryAbility();
+        _weapons[selected].TryAbility();
     }
 
-    public void ChangeWeaponSelected(int Selected)
+    public void ChangeSelected(int weapon)
     {
-        _weapons[weaponSelected].CancelShoot();
-        weaponSelected = Selected;
-        for (int i = 0; i < _weapons.Length; i++) // Se que no es necesario hacer un for (con un if ya esta listo), pero lo hago escalable para que se puedan poner mas armas
+        if (selected != weapon)
         {
-            if (weaponSelected == i)
+            _weapons[selected].CancelShoot();
+            selected = weapon;
+            for (int i = 0; i < _weapons.Length; i++) // Se que no es necesario hacer un for (con un if ya esta listo), pero lo hago escalable para que se puedan poner mas armas
             {
-                _weapons[i].gameObject.SetActive(true);
-                _weapons[i].canShoot = true;
+                if (selected == i)
+                {
+                    _weapons[i].gameObject.SetActive(true);
+                    _weapons[i].canShoot = true;
+                }
+                else
+                {
+                    _weapons[i].gameObject.SetActive(false);
+                }
             }
-            else
-            {
-                _weapons[i].gameObject.SetActive(false);
-            }
+            _weapons[selected].StartCoroutine(_weapons[selected].Equip());
         }
     }
 }

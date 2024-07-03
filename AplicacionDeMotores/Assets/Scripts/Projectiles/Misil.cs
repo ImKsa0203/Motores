@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ProjectileMisil : ProjectileExplosive
+public class Misil : Explosive
 {
     private void Update()
     {

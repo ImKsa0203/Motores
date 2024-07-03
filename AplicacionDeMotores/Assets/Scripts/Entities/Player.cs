@@ -22,7 +22,7 @@ public class Player : Entity
         _camera = GetComponentInChildren<Camera>();
         for (int i = 0; i < _weaponManager._weapons.Length; i++)
         {
-            _weaponManager._weapons[i].setStats(_damage, false);
+            _weaponManager._weapons[i].SetStats(_damage, false);
         }
     }
 
