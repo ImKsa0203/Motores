@@ -10,6 +10,7 @@ public class Player : Entity
     [SerializeField] private Transform _weapon;
     private WeaponManager _weaponManager;
     private Camera _camera;
+    private Transform _checkpoint;
 
     public static Player player;
 
