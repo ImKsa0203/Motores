@@ -21,21 +21,16 @@ public class Melee : Enemy
 
     protected override void StartAttack()
     {
-        Attack();
-    }
-
-    protected override void CancelAttack()
-    {
-        CancelInvoke("Attack");
-    }
-
-    private void Attack()
-    {
         _attackObject.SetActive(true);
         Vector3 direction = _target.position - transform.position;
         _attackObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg));
         Invoke("DeactivateCollider", _timeAttacking);
-        Invoke("Attack", _fireRate);
+        Invoke("StartAttack", _fireRate);
+    }
+
+    protected override void CancelAttack()
+    {
+        CancelInvoke("StartAttack");
     }
 
     private void DeactivateCollider()

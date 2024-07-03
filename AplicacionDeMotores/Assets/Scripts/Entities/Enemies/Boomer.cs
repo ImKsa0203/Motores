@@ -13,6 +13,7 @@ public class Boomer : Enemy
     {
         Invoke("Die", _timeToExplode);
     }
+
     protected override void CancelAttack()
     {
         CancelInvoke("Die");
