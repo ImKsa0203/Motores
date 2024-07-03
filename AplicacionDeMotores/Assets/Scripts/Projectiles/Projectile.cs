@@ -14,7 +14,7 @@ public abstract class Projectile : MonoBehaviour, IDamageable
     [SerializeField] protected LayerMask _collition;
     protected Rigidbody2D _rigidbody2D;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _rigidbody2D.velocity = transform.right * _speed;

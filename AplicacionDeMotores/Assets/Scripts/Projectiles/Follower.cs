@@ -9,6 +9,12 @@ public class Follower : Bullet
     [Header("AutoDef")]
     public Transform target;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        target = Player.player.transform;
+    }
+
     private void Update()
     {
         if (target != null)

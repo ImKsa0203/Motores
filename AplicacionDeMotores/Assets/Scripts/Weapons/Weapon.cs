@@ -79,7 +79,7 @@ public abstract class Weapon : MonoBehaviour
         canShoot = action;
     }
 
-    private void Shoot()
+    protected virtual void Shoot()
     {
         CreateProjectile(_projectilePrefab, _firePoint.position, _rotation.rotation);
     }

@@ -48,13 +48,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3ac65d8ec723e4683108a7f3f41307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
+  _speed: 5
   _timeToDestroy: 10
   _damage: 0
   _isEnemy: 0
   _collition:
     serializedVersion: 2
-    m_Bits: 896
+    m_Bits: 640
   angularSpeed: 3
   target: {fileID: 0}
 --- !u!70 &8473821144406554273

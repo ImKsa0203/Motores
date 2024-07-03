@@ -625,6 +625,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeaponGranade
       objectReference: {fileID: 0}
+    - target: {fileID: 2649507600631034441, guid: 05e2555be523ce74bae01bbfcb13cd02, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7069230032385650770, guid: 05e2555be523ce74bae01bbfcb13cd02, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
