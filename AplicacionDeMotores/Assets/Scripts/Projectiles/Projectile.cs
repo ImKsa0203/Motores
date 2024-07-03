@@ -27,14 +27,7 @@ public abstract class Projectile : MonoBehaviour, IDamageable
         _isEnemy = enemy;
     }
 
-    public void TakeDamage(int damage)
-    {
-        OnDamage();
-    }
-
-    protected abstract void OnDamage();
-
-    protected virtual void DestroyProjectile()
+    public virtual void TakeDamage(int damage)
     {
         Destroy(gameObject);
     }

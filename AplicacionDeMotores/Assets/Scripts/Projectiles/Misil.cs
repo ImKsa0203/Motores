@@ -14,7 +14,7 @@ public class Misil : Explosive
     {
         if (_collition == (_collition | (1 << collision.gameObject.layer)))
         {
-            DestroyProjectile();
+            TakeDamage(_damage);
         }
     }
 }

@@ -15,23 +15,18 @@ public class Bullet : Projectile
                 if (entity.isEnemy != _isEnemy)
                 {
                     damagable.TakeDamage(_damage);
-                    DestroyProjectile();
+                    TakeDamage(_damage);
                 }
             }
             else
             {
                 damagable.TakeDamage(_damage);
-                DestroyProjectile();
+                TakeDamage(_damage);
             }
         }
         if (_collition == (_collition | (1 << collision.gameObject.layer)))
         {
-            DestroyProjectile();
+            TakeDamage(_damage);
         }
-    }
-
-    protected override void OnDamage()
-    {
-        DestroyProjectile();
     }
 }
