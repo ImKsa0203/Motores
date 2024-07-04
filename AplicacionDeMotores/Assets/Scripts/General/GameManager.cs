@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
     public int lives = 3;
-    public int itemsPicked = 0;
+    public int coins = 0;
     public Transform[] checkpoints;
     public int checkpointSave = 0;
 
@@ -43,5 +44,11 @@ public class GameManager : MonoBehaviour
     public void ResetLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void GetCoins(int Valor)
+    {
+        coins += Valor;
+        
     }
 }

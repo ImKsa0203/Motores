@@ -7,6 +7,7 @@ public class CanvasManager : MonoBehaviour
 {
     public static CanvasManager Instance;
 
+    public TMP_Text livesText;
     public TMP_Text coinText;
     public int currentCoins = 0;
 
