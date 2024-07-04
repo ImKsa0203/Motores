@@ -487,15 +487,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318b14749be6e204997aeb344dd55865, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 3
-  coins: 0
-  checkpoints:
+  _checkpoints:
   - {fileID: 954011996}
   - {fileID: 1819383511}
   - {fileID: 2030214383}
   - {fileID: 1162525864}
   - {fileID: 262892130}
-  checkpointSave: 0
 --- !u!1001 &262892129
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3006,18 +3003,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3798370600635141390, guid: 065d0c88d68c6594fb5b95b9aeb5f9e8, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0.17254902
-      objectReference: {fileID: 0}
-    - target: {fileID: 3798370600635141390, guid: 065d0c88d68c6594fb5b95b9aeb5f9e8, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3798370600635141390, guid: 065d0c88d68c6594fb5b95b9aeb5f9e8, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.21960786
-      objectReference: {fileID: 0}
     - target: {fileID: 7602644412964211937, guid: 065d0c88d68c6594fb5b95b9aeb5f9e8, type: 3}
       propertyPath: m_Name
       value: Player
