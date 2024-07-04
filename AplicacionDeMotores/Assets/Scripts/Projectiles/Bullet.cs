@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : Projectile
+public class Bullet : Projectile //TP2 - Lautaro Pistolessi
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,8 +14,8 @@ public class Bullet : Projectile
             {
                 if (entity.stats.IsEnemy != _isEnemy)
                 {
-                    damagable.TakeDamage(_damage); // A quien golpeo
-                    TakeDamage(_damage); // Yo ( proyectil-bullet)
+                    damagable.TakeDamage(_damage); // objetivo
+                    TakeDamage(_damage); // yo ( proyectil-bullet)
                 }
             }
             else

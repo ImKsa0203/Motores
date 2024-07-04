@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Melee : Enemy
+public class Melee : Enemy // TP2 - Matteo Lescano
 {
     [Header("Stats")]
     [SerializeField] private float _fireRate = 2;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Coins : MonoBehaviour
+public class Coins : MonoBehaviour // TP2 - Matteo Lescano
 {
     [SerializeField] private int _quantity = 1;
 

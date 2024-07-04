@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public struct Stats
+public struct Stats //TP2 - Lautaro Pistolessi
 {
     [SerializeField] private int _maxHealth;
     [SerializeField] private float _speed;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour, IDamageable
+public class Projectile : MonoBehaviour, IDamageable //TP2 - Lautaro Pistolessi
 {
     [Header("Stats")]
     [SerializeField] private float _speed = 10;

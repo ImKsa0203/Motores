@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Barrel : MonoBehaviour, IDamageable
+public class Barrel : MonoBehaviour, IDamageable // TP2 - Matteo Lescano
 {
     [Header("Stats")]
     [SerializeField] private int _damage = 100;
