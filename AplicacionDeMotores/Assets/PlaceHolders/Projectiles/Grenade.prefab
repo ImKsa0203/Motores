@@ -9,13 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6902651581350016451}
-  - component: {fileID: 8962387295024186681}
-  - component: {fileID: -9148664885155207999}
+  - component: {fileID: -2682947098923792259}
+  - component: {fileID: -3202060592350787792}
   - component: {fileID: -4496720669752643718}
   - component: {fileID: 3919265805743148512}
   - component: {fileID: 8179788823805532956}
   m_Layer: 10
-  m_Name: ProjectileMisil
+  m_Name: Grenade
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,7 +36,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8962387295024186681
+--- !u!114 &-2682947098923792259
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,19 +45,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 7697130245237819586}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c70c217ecc479f34f818e5f0983907c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 516dc593fe4272e4c8ccabcacfae4acd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 15
+  _speed: 8
   _timeToDestroy: 10
-  _damage: 0
-  _isEnemy: 0
   _collition:
     serializedVersion: 2
-    m_Bits: 896
+    m_Bits: 2176
   _explosion: {fileID: 2613653543182174268, guid: 6578b53bf1f6ad1418e05dfbb1962980, type: 3}
---- !u!70 &-9148664885155207999
-CapsuleCollider2D:
+  _initialTorque: -5
+  _timeToExplode: 1
+--- !u!58 &-3202060592350787792
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -65,13 +65,13 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 7697130245237819586}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 1fab073ad025da444ab80ee1eec9cca9, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 768
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -85,12 +85,12 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.23, y: 0.09}
-  m_Direction: 1
+  m_Offset: {x: 0.009807827, y: -0.03021868}
+  serializedVersion: 2
+  m_Radius: 0.060000002
 --- !u!50 &-4496720669752643718
 Rigidbody2D:
   serializedVersion: 4
@@ -103,7 +103,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.3
   m_LinearDrag: 0
   m_AngularDrag: 2
   m_GravityScale: 1
@@ -159,7 +159,7 @@ SpriteRenderer:
   m_SortingLayerID: -829625211
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e5bc450b280fd6b41b9398adc0711323, type: 3}
+  m_Sprite: {fileID: 21300000, guid: be363793670e812428bf55f59b3c7702, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -243,8 +243,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 0, a: 1}
-      key1: {r: 0.7169812, g: 0.7169812, b: 0.15895337, a: 0.41568628}
+      key0: {r: 0, g: 1, b: 0, a: 1}
+      key1: {r: 0.18516374, g: 0.5377358, b: 0.18516374, a: 0.41568628}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}

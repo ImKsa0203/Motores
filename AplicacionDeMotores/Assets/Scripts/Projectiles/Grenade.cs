@@ -9,7 +9,6 @@ public class Grenade : Explosive
     [SerializeField] private float _initialTorque = -5;
     [SerializeField] private float _timeToExplode = 1;
     private bool _exploding = false;
-
     private void Start()
     {
         _rigidbody2D.AddTorque(_initialTorque);

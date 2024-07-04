@@ -368,13 +368,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 229112925}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce21200f1a8ecc94d970748a6cca49a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 318b14749be6e204997aeb344dd55865, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpoint:
+  lives: 3
+  coins: 0
+  checkpoints:
   - {fileID: 2132930232}
   - {fileID: 1033356053}
-  - {fileID: 1033356053}
+  - {fileID: 1573378080}
+  checkpointSave: 0
 --- !u!1 &243519058
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,6 +1055,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6230378444019487067, guid: 5122cb52d49358748bc7b0ce24d6813f, type: 3}
   m_PrefabInstance: {fileID: 7895324704610708475}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1573378080 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2324835008435421630, guid: f6fdcc7de181adc478196f834437bcc2, type: 3}
+  m_PrefabInstance: {fileID: 743740680}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1621068954
 PrefabInstance:
@@ -1922,6 +1930,30 @@ PrefabInstance:
     - target: {fileID: 3311447131296739687, guid: 4b9ab32b28fd8d64187a78990dc01d5e, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026233583646714371, guid: 4b9ab32b28fd8d64187a78990dc01d5e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026233583646714371, guid: 4b9ab32b28fd8d64187a78990dc01d5e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026233583646714371, guid: 4b9ab32b28fd8d64187a78990dc01d5e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928150584762262999, guid: 4b9ab32b28fd8d64187a78990dc01d5e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928150584762262999, guid: 4b9ab32b28fd8d64187a78990dc01d5e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928150584762262999, guid: 4b9ab32b28fd8d64187a78990dc01d5e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
