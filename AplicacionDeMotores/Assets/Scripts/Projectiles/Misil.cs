@@ -12,7 +12,7 @@ public class Misil : Explosive // TP2 - Tomas Racciatti
 
     private void OnTriggerEnter2D(Collider2D collition)
     {
-        if (_collition == (_collition | (1 << collition.gameObject.layer)))
+        if (_layerMask == (_layerMask | (1 << collition.gameObject.layer)))
         {
             TakeDamage(_damage);
         }
