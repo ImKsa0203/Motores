@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
     {
         _coins += Quantity;
         CanvasManager.instance.SetCoinsText(_coins);
-        if (_coins >= 20)
+        if (_coins >= 10)
         {
             SceneChanger();
         }
