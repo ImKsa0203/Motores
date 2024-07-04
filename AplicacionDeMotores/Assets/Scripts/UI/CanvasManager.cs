@@ -5,24 +5,28 @@ using TMPro;
 
 public class CanvasManager : MonoBehaviour
 {
-    public static CanvasManager Instance;
+    public static CanvasManager instance;
 
     public TMP_Text livesText;
     public TMP_Text coinText;
-    public int currentCoins = 0;
 
     private void Awake()
     {
-        Instance = this;
+        instance = this;
     }
     void Start()
     {
-        coinText.text = "COINS: " + currentCoins.ToString();
+        livesText.text = "LIVES: " + GameManager.instance.lives;
+        coinText.text = "COINS: " + GameManager.instance.coins;
     }
 
-    public void IncreaseCoins(int Valor)
+    public void SetLivesText(int quantity)
     {
-        currentCoins += Valor;
-        coinText.text = "COINS: " + currentCoins.ToString();
+        livesText.text = "LIVES: " + quantity;
+    }
+
+    public void SetCoinsText(int quantity)
+    {
+        coinText.text = "COINS: " + quantity;
     }
 }
