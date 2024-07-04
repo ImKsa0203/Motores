@@ -7,12 +7,7 @@ using UnityEngine.InputSystem.Controls;
 public abstract class Entity : MonoBehaviour, IDamageable
 {
     [Header("Stats")]
-    [SerializeField] protected int _maxHealth = 100;
     [SerializeField] protected int _health;
-    [SerializeField] private float _speed = 3;
-    [SerializeField] protected int _damage = 10;
-    [SerializeField] private int _jumps = 1;
-    [SerializeField] public bool isEnemy = false;
     [SerializeField] public Stats stats = new Stats();
     protected SpriteRenderer _spriteRenderer;
     private int _jumpLeft;
@@ -24,8 +19,8 @@ public abstract class Entity : MonoBehaviour, IDamageable
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _health = _maxHealth;
-        _jumpLeft = _jumps;
+        _health = stats.MaxHealth;
+        _jumpLeft = stats.Jumps;
     }
 
     protected virtual void FixedUpdate()
@@ -34,9 +29,9 @@ public abstract class Entity : MonoBehaviour, IDamageable
         {
             if (direction != 0)
             {
-                if (Mathf.Abs(_rigidbody2D.velocity.x) < _speed)
+                if (Mathf.Abs(_rigidbody2D.velocity.x) < stats.Speed)
                 {
-                    _rigidbody2D.AddForce(new Vector2(direction * _speed * 100 * Time.fixedDeltaTime, 0));
+                    _rigidbody2D.AddForce(new Vector2(direction * stats.Speed * 100 * Time.fixedDeltaTime, 0));
                 }
             }
             else
@@ -57,7 +52,7 @@ public abstract class Entity : MonoBehaviour, IDamageable
 
     public virtual void Heal(int healing)
     {
-        _health += Mathf.Clamp(healing, 0, _maxHealth - _health);
+        _health += Mathf.Clamp(healing, 0, stats.MaxHealth - _health);
     }
 
     protected abstract void Die();
@@ -79,7 +74,7 @@ public abstract class Entity : MonoBehaviour, IDamageable
     {
         if (_landed = value) //quiero asignarla a la vez, no comparar si es igual
         {
-            _jumpLeft = _jumps;
+            _jumpLeft = stats.Jumps;
         }
         else
         {

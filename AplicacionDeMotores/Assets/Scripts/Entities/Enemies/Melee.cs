@@ -15,8 +15,8 @@ public class Melee : Enemy
     {
         base.Awake();
         _attackObject.SetActive(false);
-        _meleeDmg.damage = _damage;
-        _meleeDmg.isEnemy = isEnemy;
+        _meleeDmg.damage = stats.Damage;
+        _meleeDmg.isEnemy = stats.IsEnemy;
     }
 
     protected override void StartAttack()

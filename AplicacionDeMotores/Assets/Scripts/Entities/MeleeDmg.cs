@@ -14,7 +14,7 @@ public class MeleeDmg : MonoBehaviour
             Entity entity = collision.GetComponent<Entity>();
             if (entity)
             {
-                if (entity.isEnemy != isEnemy)
+                if (entity.stats.IsEnemy != isEnemy)
                 {
                     damagable.TakeDamage(damage);
                 }

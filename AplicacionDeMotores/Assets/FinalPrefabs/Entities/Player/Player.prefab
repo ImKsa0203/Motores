@@ -290,6 +290,12 @@ MonoBehaviour:
   _damage: 10
   _jumps: 2
   isEnemy: 0
+  stats:
+    _maxHealth: 100
+    _speed: 5
+    _damage: 10
+    _jumps: 2
+    _isEnemy: 0
   _weapon: {fileID: 1704917899800125010}
 --- !u!114 &7230135336145808169
 MonoBehaviour:

@@ -17,18 +17,17 @@ public class Player : Entity
     {
         base.Awake();
         player = this;
-        isEnemy = false;
         _weaponManager = GetComponentInChildren<WeaponManager>();
         _camera = GetComponentInChildren<Camera>();
         for (int i = 0; i < _weaponManager._weapons.Length; i++)
         {
-            _weaponManager._weapons[i].SetStats(_damage, false);
+            _weaponManager._weapons[i].SetStats(stats.Damage, false);
         }
     }
 
     private void Start()
     {
-        CanvasManager.instance.SetHealthBar(_health, _maxHealth);
+        CanvasManager.instance.SetHealthBar(_health, stats.MaxHealth);
     }
 
     private void Update()
@@ -57,20 +56,20 @@ public class Player : Entity
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
-        CanvasManager.instance.SetHealthBar(_health, _maxHealth);
+        CanvasManager.instance.SetHealthBar(_health, stats.MaxHealth);
     }
 
     public override void Heal(int healing)
     {
         base.Heal(healing);
-        CanvasManager.instance.SetHealthBar(_health, _maxHealth);
+        CanvasManager.instance.SetHealthBar(_health, stats.MaxHealth);
     }
 
     protected override void Die()
     {
         GameManager.instance.PlayerDie();
-        _health = _maxHealth;
-        CanvasManager.instance.SetHealthBar(_health, _maxHealth);
+        _health = stats.MaxHealth;
+        CanvasManager.instance.SetHealthBar(_health, stats.MaxHealth);
     }
 
     public void Horizontal(InputAction.CallbackContext CallbackContext)

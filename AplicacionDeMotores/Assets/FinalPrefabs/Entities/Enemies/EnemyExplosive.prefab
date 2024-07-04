@@ -55,6 +55,12 @@ MonoBehaviour:
   _damage: 10
   _jumps: 1
   isEnemy: 1
+  stats:
+    _maxHealth: 1
+    _speed: 4
+    _damage: 10
+    _jumps: 1
+    _isEnemy: 1
   range: 8
   _timeToExplode: 1
   _explosion: {fileID: 2613653543182174268, guid: 6578b53bf1f6ad1418e05dfbb1962980, type: 3}

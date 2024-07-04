@@ -3200,6 +3200,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5011201462270121024, guid: 00b7534d9d0721e4384728dd7fef391a, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[21].m_Data
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011201462270121024, guid: 00b7534d9d0721e4384728dd7fef391a, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[22].m_Data
+      value: 
+      objectReference: {fileID: 21300000, guid: d0aab364ac3205e4795d315d05325b60, type: 3}
+    - target: {fileID: 5011201462270121024, guid: 00b7534d9d0721e4384728dd7fef391a, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[21].m_RefCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011201462270121024, guid: 00b7534d9d0721e4384728dd7fef391a, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[22].m_RefCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011201462270121024, guid: 00b7534d9d0721e4384728dd7fef391a, type: 3}
+      propertyPath: m_Tiles.Array.data[7447].second.m_TileSpriteIndex
+      value: 22
+      objectReference: {fileID: 0}
     - target: {fileID: 7190049864894732608, guid: 00b7534d9d0721e4384728dd7fef391a, type: 3}
       propertyPath: m_Name
       value: Grid

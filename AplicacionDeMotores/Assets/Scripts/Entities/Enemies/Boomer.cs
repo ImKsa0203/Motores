@@ -22,7 +22,7 @@ public class Boomer : Enemy
     protected override void Die()
     {
         GameObject explosion = Instantiate(_explosion, transform.position, Quaternion.identity);
-        explosion.GetComponent<Explosion>().damage = _damage;
+        explosion.GetComponent<Explosion>().damage = stats.Damage;
         base.Die();
     }
 }

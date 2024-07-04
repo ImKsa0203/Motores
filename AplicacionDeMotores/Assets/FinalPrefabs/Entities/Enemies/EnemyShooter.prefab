@@ -56,6 +56,13 @@ MonoBehaviour:
   _damage: 10
   _jumps: 1
   isEnemy: 1
+  stats:
+    _maxHealth: 25
+    _speed: 1.5
+    _damage: 10
+    _jumps: 1
+    _isEnemy: 1
+  range: 8
   _weaponTransform: {fileID: 6893097917760267952}
   _weaponScript: {fileID: 156129771717895815}
 --- !u!61 &2728154107181870235

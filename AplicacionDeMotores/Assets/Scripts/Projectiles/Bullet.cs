@@ -12,7 +12,7 @@ public class Bullet : Projectile
             Entity entity = collision.GetComponent<Entity>();
             if (entity)
             {
-                if (entity.isEnemy != _isEnemy)
+                if (entity.stats.IsEnemy != _isEnemy)
                 {
                     damagable.TakeDamage(_damage); // A quien golpeo
                     TakeDamage(_damage); // Yo ( proyectil-bullet)
