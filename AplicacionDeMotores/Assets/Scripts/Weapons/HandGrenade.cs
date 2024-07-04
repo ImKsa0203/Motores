@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HandGrenade : Weapon
+public class HandGrenade : Weapon // TP2 - Tomas Racciatti
 {
     private SpriteRenderer _spriteRenderer;
 

@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Explosion : MonoBehaviour
+public class Explosion : MonoBehaviour // TP2 - Tomas Racciatti
 {
-    [Header("AutoDef")]
+    [HideInInspector]
     public int damage = 10;
 
     private void Awake()
