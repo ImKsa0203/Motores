@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5011201462270121024}
   - component: {fileID: 1257447631883874411}
   - component: {fileID: 1738093061960188855}
-  - component: {fileID: 1879123604666072977}
-  - component: {fileID: 8392570770221606800}
+  - component: {fileID: 5632086116981938671}
+  - component: {fileID: 1512772003599849815}
   m_Layer: 7
   m_Name: Tilemap (midground) solid
   m_TagString: Untagged
@@ -67414,7 +67414,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 701164918901986086}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: e59ab56b15eff204cafdd0cd186e9411, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -67441,7 +67441,7 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
---- !u!50 &1879123604666072977
+--- !u!50 &5632086116981938671
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -67468,7 +67468,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!66 &8392570770221606800
+--- !u!66 &1512772003599849815
 CompositeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -67477,7 +67477,7 @@ CompositeCollider2D:
   m_GameObject: {fileID: 701164918901986086}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: e59ab56b15eff204cafdd0cd186e9411, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -74511,7 +74511,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3192713646028035165}
   - component: {fileID: 6087990332027807878}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
