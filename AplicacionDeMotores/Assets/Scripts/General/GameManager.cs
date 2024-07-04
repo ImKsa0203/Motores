@@ -19,6 +19,11 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
+    private void Start()
+    {
+        Player.player.transform.position = checkpoints[checkpointSave].position;
+    }
+
     public void SetCheckpoint(Transform point)
     {
         int actualPoint = Array.IndexOf(checkpoints, point);
@@ -34,10 +39,11 @@ public class GameManager : MonoBehaviour
         if (lives > 0)
         {
             Player.player.transform.position = checkpoints[checkpointSave].position;
+            CanvasManager.instance.SetLivesText(lives);
         }
         else
         {
-            GameManager.instance.ResetLevel();
+            ResetLevel();
         }
     }
 
@@ -46,9 +52,9 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void GetCoins(int Valor)
+    public void AddCoins(int Quantity)
     {
-        coins += Valor;
-        
+        coins += Quantity;
+        CanvasManager.instance.SetCoinsText(coins);
     }
 }
