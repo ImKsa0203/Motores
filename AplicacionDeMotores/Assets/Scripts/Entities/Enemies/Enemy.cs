@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Enemy : Entity
 {
     protected Transform _target;
-    protected bool _follow = true;
+    [SerializeField] private float range = 8;
 
     protected override void Awake()
     {
@@ -17,7 +17,7 @@ public abstract class Enemy : Entity
 
     protected virtual void Update()
     {
-        if (_target && _follow)
+        if (_target && Vector3.Distance(_target.position, transform.position) < range)
         {
             int lastDirection = direction;
             direction = (int)Mathf.Sign(_target.position.x - transform.position.x);
