@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     private int _lives = 3;
     private int _coins = 0;
-    private Transform[] _checkpoints;
+    [SerializeField] private Transform[] _checkpoints;
     private int _checkpointSave = 0;
 
     private void Awake()
