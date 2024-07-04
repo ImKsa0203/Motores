@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spike : MonoBehaviour
+public class Spike : MonoBehaviour // TP2 - Matteo Lescano
 {
     [Header("Stats")]
     //[SerializeField] private int _damageEnter = 10;

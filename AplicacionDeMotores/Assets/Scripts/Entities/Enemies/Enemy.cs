@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Enemy : Entity
+public abstract class Enemy : Entity // TP2 - Matteo Lescano
 {
     protected Transform _target;
     [SerializeField] private float range = 8;
