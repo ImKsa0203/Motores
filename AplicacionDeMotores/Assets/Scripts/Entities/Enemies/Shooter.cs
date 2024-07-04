@@ -12,7 +12,7 @@ public class Shooter : Enemy //TP2 - Lautaro Pistolessi
     {
         base.Update();
         Vector3 direction = _target.position - transform.position;
-        _weaponTransform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg));
+        _weaponTransform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg)); //apuntado
 
         if (_weaponTransform.eulerAngles.z > 90 && _weaponTransform.eulerAngles.z < 270) //flip arma
         {
