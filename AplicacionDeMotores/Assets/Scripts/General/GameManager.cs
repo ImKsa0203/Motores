@@ -56,5 +56,20 @@ public class GameManager : MonoBehaviour
     {
         coins += Quantity;
         CanvasManager.instance.SetCoinsText(coins);
+        if (coins >= 20)
+        {
+            SceneChanger();
+        }
+    }
+
+    public void SceneChanger()
+    {
+        int CurrentScene = SceneManager.GetActiveScene().buildIndex;
+        if (CurrentScene + 1 < SceneManager.sceneCountInBuildSettings)
+            SceneManager.LoadScene(CurrentScene + 1);
+        else
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }
