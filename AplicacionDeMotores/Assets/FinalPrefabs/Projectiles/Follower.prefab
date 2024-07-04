@@ -52,7 +52,7 @@ MonoBehaviour:
   _timeToDestroy: 10
   _layerMask:
     serializedVersion: 2
-    m_Bits: 640
+    m_Bits: 128
   _angularSpeed: 0.5
 --- !u!70 &8473821144406554273
 CapsuleCollider2D:

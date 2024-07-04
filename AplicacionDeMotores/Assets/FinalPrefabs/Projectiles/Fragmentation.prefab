@@ -52,7 +52,7 @@ MonoBehaviour:
   _timeToDestroy: 10
   _layerMask:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 128
   rifle: {fileID: 0}
   prefab: {fileID: 7697130245237819586, guid: ff55e89cc02163647b96e409c058b28c, type: 3}
 --- !u!70 &8473821144406554273
