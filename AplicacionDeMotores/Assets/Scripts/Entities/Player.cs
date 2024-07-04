@@ -10,7 +10,6 @@ public class Player : Entity
     [SerializeField] private Transform _weapon;
     private WeaponManager _weaponManager;
     private Camera _camera;
-    private Transform _checkpoint;
 
     public static Player player;
 
@@ -52,17 +51,8 @@ public class Player : Entity
 
     protected override void Die()
     {
-        GameManager.lives--;
-
-        if (GameManager.lives > 0)
-        {
-            _health = _maxHealth;
-            GameManager.instance.LoadCheckpoint();
-        }
-        else
-        {
-            GameManager.instance.ResetLevel();
-        }
+        GameManager.instance.PlayerDie();
+        _health = _maxHealth;
     }
 
     public void Horizontal(InputAction.CallbackContext CallbackContext)
