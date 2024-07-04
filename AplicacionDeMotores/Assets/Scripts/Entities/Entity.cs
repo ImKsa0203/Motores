@@ -86,7 +86,7 @@ public abstract class Entity : MonoBehaviour, IDamageable
         }
     }
 
-    protected void LookSprite()
+    protected void LookSprite() // para que lado ve el sprite
     {
         switch (direction)
         {
