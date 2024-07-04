@@ -262,10 +262,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyExplosive (7)
       objectReference: {fileID: 0}
-    - target: {fileID: 7885951644592679119, guid: d0b208f7caa57ce438f35f3794541a3e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -703,10 +699,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyExplosive (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 7885951644592679119, guid: d0b208f7caa57ce438f35f3794541a3e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -722,7 +714,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1319822473632333897, guid: d0b208f7caa57ce438f35f3794541a3e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.3272753
+      value: -0.18
       objectReference: {fileID: 0}
     - target: {fileID: 1319822473632333897, guid: d0b208f7caa57ce438f35f3794541a3e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -763,10 +755,6 @@ PrefabInstance:
     - target: {fileID: 1477311883937885759, guid: d0b208f7caa57ce438f35f3794541a3e, type: 3}
       propertyPath: m_Name
       value: EnemyExplosive (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7885951644592679119, guid: d0b208f7caa57ce438f35f3794541a3e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -835,10 +823,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyExplosive (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 7885951644592679119, guid: d0b208f7caa57ce438f35f3794541a3e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -895,10 +879,6 @@ PrefabInstance:
     - target: {fileID: 1477311883937885759, guid: d0b208f7caa57ce438f35f3794541a3e, type: 3}
       propertyPath: m_Name
       value: EnemyExplosive (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7885951644592679119, guid: d0b208f7caa57ce438f35f3794541a3e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1121,10 +1101,6 @@ PrefabInstance:
     - target: {fileID: 1477311883937885759, guid: d0b208f7caa57ce438f35f3794541a3e, type: 3}
       propertyPath: m_Name
       value: EnemyExplosive (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7885951644592679119, guid: d0b208f7caa57ce438f35f3794541a3e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1532,10 +1508,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyExplosive (8)
       objectReference: {fileID: 0}
-    - target: {fileID: 7885951644592679119, guid: d0b208f7caa57ce438f35f3794541a3e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1660,10 +1632,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyExplosive (10)
       objectReference: {fileID: 0}
-    - target: {fileID: 7885951644592679119, guid: d0b208f7caa57ce438f35f3794541a3e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1735,10 +1703,6 @@ PrefabInstance:
     - target: {fileID: 1477311883937885759, guid: d0b208f7caa57ce438f35f3794541a3e, type: 3}
       propertyPath: m_Name
       value: EnemyExplosive (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7885951644592679119, guid: d0b208f7caa57ce438f35f3794541a3e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2003,10 +1967,6 @@ PrefabInstance:
     - target: {fileID: 1477311883937885759, guid: d0b208f7caa57ce438f35f3794541a3e, type: 3}
       propertyPath: m_Name
       value: EnemyExplosive
-      objectReference: {fileID: 0}
-    - target: {fileID: 7885951644592679119, guid: d0b208f7caa57ce438f35f3794541a3e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2317,10 +2277,6 @@ PrefabInstance:
     - target: {fileID: 1477311883937885759, guid: d0b208f7caa57ce438f35f3794541a3e, type: 3}
       propertyPath: m_Name
       value: EnemyExplosive (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7885951644592679119, guid: d0b208f7caa57ce438f35f3794541a3e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
