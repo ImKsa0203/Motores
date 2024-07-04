@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class CanvasManager : MonoBehaviour
+public class CanvasManager : MonoBehaviour // TP2 - Matteo Lescano
 {
     public static CanvasManager instance;
 
