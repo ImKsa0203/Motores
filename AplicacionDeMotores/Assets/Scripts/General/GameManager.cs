@@ -8,10 +8,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public int lives = 3;
-    public int coins = 0;
-    public Transform[] checkpoints;
-    public int checkpointSave = 0;
+    private int lives = 3;
+    private int coins = 0;
+    private Transform[] checkpoints;
+    private int checkpointSave = 0;
 
     private void Awake()
     {
@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Player.player.transform.position = checkpoints[checkpointSave].position;
+        CanvasManager.instance.SetCoinsText(coins);
+        CanvasManager.instance.SetHealthBar(100,100);
+        CanvasManager.instance.SetLivesText(lives);
     }
 
     public void SetCheckpoint(Transform point)

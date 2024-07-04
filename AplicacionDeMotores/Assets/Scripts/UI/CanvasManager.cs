@@ -16,12 +16,6 @@ public class CanvasManager : MonoBehaviour
     {
         instance = this;
     }
-    void Start()
-    {
-        livesText.text = "LIVES: " + GameManager.instance.lives;
-        healthBar.value = 1;
-        coinText.text = "COINS: " + GameManager.instance.coins;
-    }
 
     public void SetLivesText(int quantity)
     {
