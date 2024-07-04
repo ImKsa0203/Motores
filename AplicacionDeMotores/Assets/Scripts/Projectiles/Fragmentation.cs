@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Fragmentation : Bullet
+public class Fragmentation : Bullet // TP2 - Nicolas Casanova
 {
     [HideInInspector] public Rifle rifle;
     [SerializeField] private GameObject prefab;

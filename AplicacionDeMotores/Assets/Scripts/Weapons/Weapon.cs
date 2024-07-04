@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public class Weapon : MonoBehaviour // TP2 - Nicolas Casanova
 {
     [Header("Stats")]
     private int _damage = 10;

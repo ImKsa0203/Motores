@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.InputSystem;
 
-public class Player : Entity
+public class Player : Entity // TP2 - Nicolas Casanova
 {
     [Header("Refs")]
     [SerializeField] private Transform _weapon;

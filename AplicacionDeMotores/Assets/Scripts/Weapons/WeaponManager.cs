@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponManager : MonoBehaviour
+public class WeaponManager : MonoBehaviour // TP2 - Nicolas Casanova
 {
     [Header("Weapon")]
     [SerializeField] public Weapon[] _weapons;
