@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Follower : Bullet
+public class Follower : Bullet // TP2 - Nicolas Casanova
 {
     [Header("Stats")]
     [SerializeField] private float _angularSpeed = 2;

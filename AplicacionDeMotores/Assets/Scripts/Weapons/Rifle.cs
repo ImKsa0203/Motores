@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rifle : Weapon
+public class Rifle : Weapon // TP2 - Nicolas Casanova
 {
     [HideInInspector] public event System.Action FragmentationAction;
 
