@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,45 +7,41 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    
-    public static int lives = 3;
-    public static int itemsPicked = 0;
-    public Transform checkpoint;
+
+    public int lives = 3;
+    public int itemsPicked = 0;
+    public Transform[] checkpoints;
+    public int checkpointSave = 0;
 
     private void Awake()
     {
-        if (instance == null)
+        instance = this;
+    }
+
+    public void SetCheckpoint(Transform point)
+    {
+        int actualPoint = Array.IndexOf(checkpoints, point);
+        if (actualPoint != -1 && actualPoint > checkpointSave)
         {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else if (instance != this)
-        {
-            Destroy(gameObject);
-            return;
+            checkpointSave = actualPoint;
         }
     }
 
-    // Sistema de checkpoints --> NO FUNCIONAL
-    /*
-    public void LoadCheckpoint(Player player)
+    public void PlayerDie()
     {
-        if (checkpoint != null)
+        lives--;
+        if (lives > 0)
         {
-            player.transform.position = checkpoint.position;
-            //player.transform.rotation = checkpoint.rotation;
+            Player.player.transform.position = checkpoints[checkpointSave].position;
         }
         else
         {
-            Debug.LogWarning("Checkpoint is not set.");
+            GameManager.instance.ResetLevel();
         }
     }
-    */
 
     public void ResetLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        lives = 3;
-        itemsPicked = 0;
     }
 }

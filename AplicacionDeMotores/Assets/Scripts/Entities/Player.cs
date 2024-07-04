@@ -10,7 +10,6 @@ public class Player : Entity
     [SerializeField] private Transform _weapon;
     private WeaponManager _weaponManager;
     private Camera _camera;
-    private Transform _checkpoint;
 
     public static Player player;
 
@@ -52,14 +51,8 @@ public class Player : Entity
 
     protected override void Die()
     {
-        GameManager.lives--;
+        GameManager.instance.PlayerDie();
         _health = _maxHealth;
-        // Aca hay que hacer un transform al ultimo checkpoint
-
-        if (GameManager.lives <= 0)
-        {
-            GameManager.instance.ResetLevel();
-        }
     }
 
     public void Horizontal(InputAction.CallbackContext CallbackContext)
@@ -99,25 +92,11 @@ public class Player : Entity
         }
     }
 
-
-    //Sistema de checkpoints --> NO FUNCIONAL
-
-    /*
-    private void OnTriggerEnter(Collider other)
+    public void Restart(InputAction.CallbackContext CallbackContext)
     {
-        Checkpoint checkpoint = other.GetComponent<Checkpoint>();
-
-        if (checkpoint != null)
+        if (CallbackContext.performed)
         {
-            GameManager.instance.checkpoint = checkpoint.transform;
-
-            Debug.Log("Checkpoint = " + checkpoint.checkpointNum);
+            GameManager.instance.ResetLevel();
         }
     }
-
-    public void Respawn()
-    {
-        GameManager.instance.LoadCheckpoint(this);
-    }
-    */
 }
