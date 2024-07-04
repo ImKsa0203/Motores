@@ -91,10 +91,10 @@ public abstract class Entity : MonoBehaviour, IDamageable
         switch (direction)
         {
             case -1:
-                _spriteRenderer.flipX = false;
+                _spriteRenderer.flipX = true;
                 break;
             case 1:
-                _spriteRenderer.flipX = true;
+                _spriteRenderer.flipX = false;
                 break;
         }
     }
