@@ -287,7 +287,7 @@ MonoBehaviour:
   _health: 100
   _speed: 5
   _damage: 10
-  _jumps: 1
+  _jumps: 2
   isEnemy: 0
   _weapon: {fileID: 1704917899800125010}
 --- !u!114 &7230135336145808169
