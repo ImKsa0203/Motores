@@ -18,7 +18,7 @@ public class Follower : Bullet
     {
         if (_target != null)
         {
-            _rigidbody2D.rotation = Mathf.LerpAngle(_rigidbody2D.rotation, Mathf.Atan2(_target.position.y - transform.position.y, _target.position.x - transform.position.x) * Mathf.Rad2Deg, _angularSpeed * Time.deltaTime / (Vector3.Distance(_target.position, transform.position) + 1));
+            _rigidbody2D.rotation = Mathf.LerpAngle(_rigidbody2D.rotation, Mathf.Atan2(_target.position.y - transform.position.y, _target.position.x - transform.position.x) * Mathf.Rad2Deg, _angularSpeed * Time.deltaTime * (Vector3.Distance(_target.position, transform.position)));
             _rigidbody2D.velocity = _rigidbody2D.velocity.magnitude * transform.right;
         }
     }
