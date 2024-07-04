@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Projectile : MonoBehaviour, IDamageable
+public class Projectile : MonoBehaviour, IDamageable
 {
     [Header("Stats")]
     [SerializeField] private float _speed = 10;
     [SerializeField] protected float _timeToDestroy = 10;
-    [Header("AutoDef")]
-    [SerializeField] protected int _damage = 0;
-    [SerializeField] protected bool _isEnemy = false;
+    protected int _damage = 0;
+    protected bool _isEnemy = false;
     [Header("Refs")]
     [SerializeField] protected LayerMask _collition;
     protected Rigidbody2D _rigidbody2D;
