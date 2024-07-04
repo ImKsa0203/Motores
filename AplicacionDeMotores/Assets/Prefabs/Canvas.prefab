@@ -413,9 +413,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89a74efde99039a4e89974cc3b4b2966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  livesText: {fileID: 1029113692111229963}
-  healthBar: {fileID: 6799164798431390521}
-  coinText: {fileID: 1070836586673271266}
+  _livesText: {fileID: 1029113692111229963}
+  _healthBar: {fileID: 6799164798431390521}
+  _coinText: {fileID: 1070836586673271266}
 --- !u!1 &3365476431488028953
 GameObject:
   m_ObjectHideFlags: 0

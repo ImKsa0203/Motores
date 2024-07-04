@@ -5,13 +5,13 @@ using UnityEngine.AI;
 
 public class Coins : MonoBehaviour
 {
-    public int quantity = 1;
+    [SerializeField] private int _quantity = 1;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Player>() == Player.player)
         {
-            GameManager.instance.AddCoins(quantity);
+            GameManager.instance.AddCoins(_quantity);
             Destroy(gameObject);
         }
     }

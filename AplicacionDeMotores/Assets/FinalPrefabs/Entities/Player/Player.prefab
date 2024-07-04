@@ -76,7 +76,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.2}
+  m_Size: {x: 0.725, y: 0.2}
   m_EdgeRadius: 0
 --- !u!114 &4067913542623035793
 MonoBehaviour:
@@ -412,6 +412,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 5df03096-4b1e-4964-a9a4-e1ccd8ed5a60
     m_ActionName: Default/Skill[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8921137744836160235}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0a4caa3d-febc-4441-97d3-420f0ccfd89d
+    m_ActionName: Default/ResetLevel[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Default
@@ -476,7 +492,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.010681152, y: -0.028032303}
+  m_Offset: {x: 0, y: -0.028032303}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -487,7 +503,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.770401, y: 0.9439354}
+  m_Size: {x: 0.77, y: 0.9439354}
   m_EdgeRadius: 0
 --- !u!212 &4610608098527455380
 SpriteRenderer:

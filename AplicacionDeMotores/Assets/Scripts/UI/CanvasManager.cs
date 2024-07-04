@@ -8,32 +8,27 @@ public class CanvasManager : MonoBehaviour
 {
     public static CanvasManager instance;
 
-    [SerializeField] private TMP_Text livesText;
-    [SerializeField] private Slider healthBar;
-    [SerializeField] private TMP_Text coinText;
+    [SerializeField] private TMP_Text _livesText;
+    [SerializeField] private Slider _healthBar;
+    [SerializeField] private TMP_Text _coinText;
 
     private void Awake()
     {
         instance = this;
     }
-    void Start()
-    {
-        livesText.text = "LIVES: " + GameManager.instance.lives;
-        coinText.text = "COINS: " + GameManager.instance.coins;
-    }
 
     public void SetLivesText(int quantity)
     {
-        livesText.text = "LIVES: " + quantity;
+        _livesText.text = "LIVES: " + quantity;
     }
 
     public void SetHealthBar(int actual, int max)
     {
-        healthBar.value = (float)actual / max;
+        _healthBar.value = (float)actual / max;
     }
 
     public void SetCoinsText(int quantity)
     {
-        coinText.text = "COINS: " + quantity;
+        _coinText.text = "COINS: " + quantity;
     }
 }
