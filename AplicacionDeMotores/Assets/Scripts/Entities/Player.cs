@@ -26,6 +26,11 @@ public class Player : Entity
         }
     }
 
+    private void Start()
+    {
+        CanvasManager.instance.SetHealthBar(_health, _maxHealth);
+    }
+
     private void Update()
     {
         if (_health > 0)
@@ -49,10 +54,23 @@ public class Player : Entity
         base.FixedUpdate();
     }
 
+    public override void TakeDamage(int damage)
+    {
+        base.TakeDamage(damage);
+        CanvasManager.instance.SetHealthBar(_health, _maxHealth);
+    }
+
+    public override void Heal(int healing)
+    {
+        base.Heal(healing);
+        CanvasManager.instance.SetHealthBar(_health, _maxHealth);
+    }
+
     protected override void Die()
     {
         GameManager.instance.PlayerDie();
         _health = _maxHealth;
+        CanvasManager.instance.SetHealthBar(_health, _maxHealth);
     }
 
     public void Horizontal(InputAction.CallbackContext CallbackContext)

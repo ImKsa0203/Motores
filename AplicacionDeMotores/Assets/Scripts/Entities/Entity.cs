@@ -45,7 +45,7 @@ public abstract class Entity : MonoBehaviour, IDamageable
         }
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         _health -= damage;
         if (_health <= 0)
@@ -54,7 +54,7 @@ public abstract class Entity : MonoBehaviour, IDamageable
         }
     }
 
-    public void Heal(int healing)
+    public virtual void Heal(int healing)
     {
         _health += Mathf.Clamp(healing, 0, _maxHealth - _health);
     }
