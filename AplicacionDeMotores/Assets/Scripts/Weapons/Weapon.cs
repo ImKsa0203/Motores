@@ -84,18 +84,17 @@ public class Weapon : MonoBehaviour
         CreateProjectile(_projectilePrefab, _firePoint.position, _rotation.rotation);
     }
 
-    public void TryAbility()
+    public virtual void TryAbility()
     {
         if (_abilityCooldown.IsReady)
         {
             Ability();
-            _abilityCooldown.StartCooldown(_abilityTime);
         }
     }
 
     protected virtual void Ability()
     {
-
+        _abilityCooldown.StartCooldown(_abilityTime);
     }
 
     protected GameObject CreateProjectile(GameObject prefab, Vector3 position, Quaternion rotation)

@@ -4,11 +4,27 @@ using UnityEngine;
 
 public class Rifle : Weapon
 {
+    [HideInInspector] public event System.Action FragmentationAction;
+
+    protected override void Shoot()
+    {
+        GameObject fragmentationBullet = CreateProjectile(_projectilePrefab, _firePoint.position, _rotation.rotation);
+        Fragmentation fragmentationComponent = fragmentationBullet.GetComponent<Fragmentation>();
+        FragmentationAction += fragmentationComponent.Fragment;
+        fragmentationComponent.rifle = this;
+    }
+
+    public override void TryAbility()
+    {
+        if (FragmentationAction != null)
+        {
+            base.TryAbility();
+        }
+    }
+
     protected override void Ability()
     {
-        for (int i = -2; i <= 2; i++)
-        {
-            CreateProjectile(_projectilePrefab, _firePoint.position + i * _rotation.up - 2 * _rotation.right, _rotation.rotation);
-        }
+        FragmentationAction.Invoke();
+        base.Ability();
     }
 }
