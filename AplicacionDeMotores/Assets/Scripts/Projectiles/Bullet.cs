@@ -14,8 +14,8 @@ public class Bullet : Projectile
             {
                 if (entity.isEnemy != _isEnemy)
                 {
-                    damagable.TakeDamage(_damage);
-                    TakeDamage(_damage);
+                    damagable.TakeDamage(_damage); // A quien golpeo
+                    TakeDamage(_damage); // Yo ( proyectil-bullet)
                 }
             }
             else
