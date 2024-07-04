@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public abstract class Explosive : Projectile
+public abstract class Explosive : Projectile // TP2 - Tomas Racciatti
 {
     [Header("Refs")]
     [SerializeField] private GameObject _explosion;
