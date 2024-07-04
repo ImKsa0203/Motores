@@ -50,9 +50,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 8
   _timeToDestroy: 10
-  _collition:
+  _layerMask:
     serializedVersion: 2
-    m_Bits: 2176
+    m_Bits: 128
   _explosion: {fileID: 2613653543182174268, guid: 6578b53bf1f6ad1418e05dfbb1962980, type: 3}
   _initialTorque: -5
   _timeToExplode: 1

@@ -24,7 +24,7 @@ public class Bullet : Projectile //TP2 - Lautaro Pistolessi
                 TakeDamage(_damage);
             }
         }
-        if (_collition == (_collition | (1 << collision.gameObject.layer)))
+        if (_layerMask == (_layerMask | (1 << collision.gameObject.layer)))
         {
             TakeDamage(_damage);
         }

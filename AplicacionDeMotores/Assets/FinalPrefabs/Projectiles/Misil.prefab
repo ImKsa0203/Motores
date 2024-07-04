@@ -50,9 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 15
   _timeToDestroy: 10
-  _damage: 0
-  _isEnemy: 0
-  _collition:
+  _layerMask:
     serializedVersion: 2
     m_Bits: 896
   _explosion: {fileID: 2613653543182174268, guid: 6578b53bf1f6ad1418e05dfbb1962980, type: 3}

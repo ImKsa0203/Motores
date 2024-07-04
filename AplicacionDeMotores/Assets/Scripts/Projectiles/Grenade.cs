@@ -16,7 +16,7 @@ public class Grenade : Explosive
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (_collition == (_collition | (1 << collision.gameObject.layer)) && !_exploding)
+        if (_layerMask == (_layerMask | (1 << collision.gameObject.layer)) && !_exploding)
         {
             Invoke("InvokeDestroy", _timeToExplode);
             _exploding = true;

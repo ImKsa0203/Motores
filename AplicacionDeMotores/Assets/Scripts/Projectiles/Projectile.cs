@@ -10,7 +10,7 @@ public class Projectile : MonoBehaviour, IDamageable //TP2 - Lautaro Pistolessi
     protected int _damage = 0;
     protected bool _isEnemy = false;
     [Header("Refs")]
-    [SerializeField] protected LayerMask _collition;
+    [SerializeField] protected LayerMask _layerMask;
     protected Rigidbody2D _rigidbody2D;
 
     protected virtual void Awake()

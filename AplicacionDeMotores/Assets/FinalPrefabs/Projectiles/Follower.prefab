@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   _timeToDestroy: 10
-  _collition:
+  _layerMask:
     serializedVersion: 2
     m_Bits: 640
   _angularSpeed: 0.5

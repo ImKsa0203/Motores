@@ -12,7 +12,7 @@ public class Misil : Explosive
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (_collition == (_collition | (1 << collision.gameObject.layer)))
+        if (_layerMask == (_layerMask | (1 << collision.gameObject.layer)))
         {
             TakeDamage(_damage);
         }
