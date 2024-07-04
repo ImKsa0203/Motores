@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NextLVL : MonoBehaviour
+public class NextLVL : MonoBehaviour //TP2 - Lautaro Pistolessi
 {
     public void SceneChanger()
     {

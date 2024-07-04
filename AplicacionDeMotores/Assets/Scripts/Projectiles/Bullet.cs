@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : Projectile
+public class Bullet : Projectile //TP2 - Lautaro Pistolessi
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
