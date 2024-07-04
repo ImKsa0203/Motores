@@ -8,10 +8,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    private int lives = 3;
-    private int coins = 0;
-    private Transform[] checkpoints;
-    private int checkpointSave = 0;
+    private int _lives = 3;
+    private int _coins = 0;
+    private Transform[] _checkpoints;
+    private int _checkpointSave = 0;
 
     private void Awake()
     {
@@ -20,28 +20,28 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Player.player.transform.position = checkpoints[checkpointSave].position;
-        CanvasManager.instance.SetCoinsText(coins);
+        Player.player.transform.position = _checkpoints[_checkpointSave].position;
+        CanvasManager.instance.SetCoinsText(_coins);
         CanvasManager.instance.SetHealthBar(100,100);
-        CanvasManager.instance.SetLivesText(lives);
+        CanvasManager.instance.SetLivesText(_lives);
     }
 
     public void SetCheckpoint(Transform point)
     {
-        int actualPoint = Array.IndexOf(checkpoints, point);
-        if (actualPoint != -1 && actualPoint > checkpointSave)
+        int actualPoint = Array.IndexOf(_checkpoints, point);
+        if (actualPoint != -1 && actualPoint > _checkpointSave)
         {
-            checkpointSave = actualPoint;
+            _checkpointSave = actualPoint;
         }
     }
 
     public void PlayerDie()
     {
-        lives--;
-        if (lives > 0)
+        _lives--;
+        if (_lives > 0)
         {
-            Player.player.transform.position = checkpoints[checkpointSave].position;
-            CanvasManager.instance.SetLivesText(lives);
+            Player.player.transform.position = _checkpoints[_checkpointSave].position;
+            CanvasManager.instance.SetLivesText(_lives);
         }
         else
         {
@@ -56,9 +56,9 @@ public class GameManager : MonoBehaviour
 
     public void AddCoins(int Quantity)
     {
-        coins += Quantity;
-        CanvasManager.instance.SetCoinsText(coins);
-        if (coins >= 20)
+        _coins += Quantity;
+        CanvasManager.instance.SetCoinsText(_coins);
+        if (_coins >= 20)
         {
             SceneChanger();
         }
