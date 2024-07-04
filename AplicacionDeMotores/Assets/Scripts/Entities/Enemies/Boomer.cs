@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boomer : Enemy
+public class Boomer : Enemy  // TP2 - Tomas Racciatti
 {
     [Header("Stats")]
     [SerializeField] private float _timeToExplode = 1;
