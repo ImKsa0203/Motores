@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6314926076436147090}
-  - component: {fileID: 6671703377920898726}
+  - component: {fileID: -7916483379771389418}
   - component: {fileID: 4081161280583858969}
   m_Layer: 11
   m_Name: Canon
@@ -34,7 +34,7 @@ Transform:
   - {fileID: 95520207041196541}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6671703377920898726
+--- !u!114 &-7916483379771389418
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,14 +43,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4502976007973179426}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c22be291e25d12438d8add3fd8fc466, type: 3}
+  m_Script: {fileID: 11500000, guid: c6d39e78b82937647ad4849835a4498a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
-  isEnemy: 0
   _fireRate: 3
   _automatic: 1
-  _abilityCooldown: 5
+  _abilityTime: 5
   _projectilePrefab: {fileID: 7697130245237819586, guid: 83ef1b129841dc645be45485160301d4, type: 3}
   canShoot: 1
 --- !u!212 &4081161280583858969

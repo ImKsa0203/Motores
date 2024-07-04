@@ -11,7 +11,7 @@ public abstract class Enemy : Entity
     {
         base.Awake();
         //_target = FindAnyObjectByType<Player>().transform; // Mal
-        _target = Player.player.transform;
+        _target = Player.player.transform; // al ser static el player puedo traer el transform de esta forma
         isEnemy = true;
     }
 

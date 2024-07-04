@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Weapon : MonoBehaviour
+public class Weapon : MonoBehaviour
 {
     [Header("Stats")]
     private int _damage = 10;
@@ -93,7 +93,10 @@ public abstract class Weapon : MonoBehaviour
         }
     }
 
-    protected abstract void Ability();
+    protected virtual void Ability()
+    {
+
+    }
 
     protected GameObject CreateProjectile(GameObject prefab, Vector3 position, Quaternion rotation)
     {
