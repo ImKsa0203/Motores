@@ -5,17 +5,7 @@ using UnityEngine.AI;
 
 public class Coins : MonoBehaviour
 {
-    public int value;
-    void Start()
-    {
-        
-    }
-
-
-    void Update()
-    {
-        
-    }
+    public int value = 1;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -23,7 +13,6 @@ public class Coins : MonoBehaviour
         {
             CanvasManager.Instance.IncreaseCoins(value);
             Destroy(gameObject);
-            print("a");
         }
     }
 }
