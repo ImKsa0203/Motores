@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour // TP2 - Nicolas Casanova
         }
         else
         {
-            ResetLevel();
+            SceneManager.LoadScene("Lose");
         }
     }
 

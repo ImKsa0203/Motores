@@ -27,6 +27,7 @@ public class HandGrenade : Weapon // TP2 - Tomas Racciatti
 
     protected override void Ability()
     {
+        base.Ability();
         for (int i = -3; i <= 3; i++)
         {
             CreateProjectile(_projectilePrefab, _firePoint.position, _rotation.rotation * Quaternion.Euler(0, 0, 5 * i));

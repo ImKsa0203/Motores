@@ -24,7 +24,7 @@ public class Rifle : Weapon // TP2 - Nicolas Casanova
 
     protected override void Ability()
     {
-        FragmentationAction.Invoke();
         base.Ability();
+        FragmentationAction.Invoke();
     }
 }
