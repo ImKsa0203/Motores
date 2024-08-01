@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static WeaponManager;
 
 public class WeaponManager : MonoBehaviour // TP2 - Nicolas Casanova
 {
@@ -8,12 +9,12 @@ public class WeaponManager : MonoBehaviour // TP2 - Nicolas Casanova
     [SerializeField] public Weapon[] weapons;
     [SerializeField] private int _selected = 0;
 
-    public enum Weapons { Rifle, Granade}
+    public enum Weapons { Rifle, Granade }
     [SerializeField] private Weapons _weapon;
 
     private void Start()
     {
-        ChangeSelected(_selected);
+        ChangeWeapon(_weapon);
     }
 
     public void Attack()
@@ -30,15 +31,36 @@ public class WeaponManager : MonoBehaviour // TP2 - Nicolas Casanova
         weapons[_selected].TryAbility();
     }
 
+    public void EquipRifle()
+    {
+        ChangeWeapon(Weapons.Rifle);
+    }
+
+    public void EquipGranade()
+    {
+        ChangeWeapon(Weapons.Granade);
+    }
+
     public void ChangeWeapon(Weapons weapon)
     {
+        //print(weapon);
         if (_weapon != weapon)
         {
-
+            //print(weapon);
+            switch (weapon)
+            {
+                case Weapons.Rifle:
+                    ChangeSelected(0);
+                    break;
+                case Weapons.Granade:
+                    ChangeSelected(1);
+                    break;
+            }
+            _weapon = weapon;
         }
     }
 
-    public void ChangeSelected(int weapon)
+    private void ChangeSelected(int weapon)
     {
         if (_selected != weapon)
         {

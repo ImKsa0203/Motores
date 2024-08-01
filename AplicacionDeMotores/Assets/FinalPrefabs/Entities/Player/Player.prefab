@@ -136,10 +136,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74b0be0c6aaa60e42a6f84b6fced6eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weapons:
+  weapons:
   - {fileID: 6015292219142808900}
   - {fileID: 5476369071922696598}
-  selected: 0
+  _selected: 0
+  _weapon: 0
 --- !u!1 &6423147138329898895
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,8 +371,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8239780120371243018}
         m_TargetAssemblyTypeName: WeaponManager, Assembly-CSharp
-        m_MethodName: ChangeSelected
-        m_Mode: 3
+        m_MethodName: EquipRifle
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -386,8 +387,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8239780120371243018}
         m_TargetAssemblyTypeName: WeaponManager, Assembly-CSharp
-        m_MethodName: ChangeSelected
-        m_Mode: 3
+        m_MethodName: EquipGranade
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
