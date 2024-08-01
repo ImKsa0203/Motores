@@ -284,12 +284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 758badc8cf2787e4884bce477e06257c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
   _health: 100
-  _speed: 5
-  _damage: 10
-  _jumps: 2
-  isEnemy: 0
   stats:
     _maxHealth: 100
     _speed: 5
@@ -297,6 +292,7 @@ MonoBehaviour:
     _jumps: 2
     _isEnemy: 0
   _weapon: {fileID: 1704917899800125010}
+  isInvincible: 0
 --- !u!114 &7230135336145808169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,6 +430,54 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 0a4caa3d-febc-4441-97d3-420f0ccfd89d
     m_ActionName: Default/ResetLevel[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8921137744836160235}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnToggleDebug
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0b7c7473-f3f6-449f-b2ff-a917eb81af6a
+    m_ActionName: Default/CheatConsole[/Keyboard/tab]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8921137744836160235}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: ToggleCheatConsole
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 59fdf750-1275-4380-9f7e-ac4de92f2afa
+    m_ActionName: UI/CheatConsole[/Keyboard/tab]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8921137744836160235}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: EnterCheat
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ef61b742-2b62-4095-89c9-9906388c12e8
+    m_ActionName: Default/TryCheat[/Keyboard/enter]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Default

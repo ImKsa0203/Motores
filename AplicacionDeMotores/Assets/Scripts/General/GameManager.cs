@@ -35,9 +35,9 @@ public class GameManager : MonoBehaviour // TP2 - Nicolas Casanova
         }
     }
 
-    public void PlayerDie()
+    public void PlayerModifyLife(int diff)
     {
-        _lives--;
+        _lives += diff;
         if (_lives > 0)
         {
             Player.player.transform.position = _checkpoints[_checkpointSave].position;

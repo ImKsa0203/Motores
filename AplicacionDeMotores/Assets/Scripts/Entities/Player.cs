@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Player : Entity // TP2 - Nicolas Casanova
 {
@@ -12,6 +14,16 @@ public class Player : Entity // TP2 - Nicolas Casanova
     private Camera _camera;
 
     public static Player player;
+    public bool isInvincible = false;
+
+    /*
+    public GameObject cheatConsolePanel;
+    public TMP_InputField cheatInputField;
+    */
+    private PlayerInput playerInput;
+
+    bool showConsole;
+    string input;
 
     protected override void Awake()
     {
@@ -19,9 +31,10 @@ public class Player : Entity // TP2 - Nicolas Casanova
         player = this;
         _weaponManager = GetComponentInChildren<WeaponManager>();
         _camera = GetComponentInChildren<Camera>();
-        for (int i = 0; i < _weaponManager._weapons.Length; i++)
+        playerInput = GetComponent<PlayerInput>();
+        for (int i = 0; i < _weaponManager.weapons.Length; i++)
         {
-            _weaponManager._weapons[i].SetStats(stats.Damage, false);
+            _weaponManager.weapons[i].SetStats(stats.Damage, false);
         }
     }
 
@@ -55,8 +68,11 @@ public class Player : Entity // TP2 - Nicolas Casanova
 
     public override void TakeDamage(int damage)
     {
-        base.TakeDamage(damage);
-        CanvasManager.instance.SetHealthBar(_health, stats.MaxHealth);
+        if (!isInvincible)
+        {
+            base.TakeDamage(damage);
+            CanvasManager.instance.SetHealthBar(_health, stats.MaxHealth);
+        }
     }
 
     public override void Heal(int healing)
@@ -67,7 +83,7 @@ public class Player : Entity // TP2 - Nicolas Casanova
 
     protected override void Die()
     {
-        GameManager.instance.PlayerDie();
+        GameManager.instance.PlayerModifyLife(-1);
         _health = stats.MaxHealth;
         CanvasManager.instance.SetHealthBar(_health, stats.MaxHealth);
     }
@@ -114,6 +130,60 @@ public class Player : Entity // TP2 - Nicolas Casanova
         if (CallbackContext.performed)
         {
             GameManager.instance.ResetLevel();
+        }
+    }
+    /*
+    public void ToggleCheatConsole(InputAction.CallbackContext CallbackContext)
+    {
+        if (CallbackContext.performed)
+        {
+            bool isActive = cheatConsolePanel.activeSelf;
+            cheatConsolePanel.SetActive(!isActive);
+
+            if (!isActive)
+            {
+                cheatInputField.ActivateInputField();
+                cheatInputField.Select();
+                playerInput.SwitchCurrentActionMap("UI");
+            }
+            else
+            {
+                cheatInputField.DeactivateInputField();
+                playerInput.SwitchCurrentActionMap("Default");
+            }
+        }
+    }*/
+
+    public void OnToggleDebug()
+    {
+        showConsole = !showConsole;
+        /*
+        if (showConsole)
+        {
+            playerInput.SwitchCurrentActionMap("UI");
+        }
+        else
+        {
+            playerInput.SwitchCurrentActionMap("Default");
+        }*/
+    }
+
+    private void OnGUI()
+    {
+        if (!showConsole) { return; }
+
+        float y = 0f;
+
+        GUI.Box(new Rect(0, y, Screen.width, 30), "");
+        GUI.backgroundColor = Color.black;
+        input = GUI.TextField(new Rect(10f, y + 5f, Screen.width - 20f, 20f), input);
+    }
+
+    public void EnterCheat(InputAction.CallbackContext CallbackContext)
+    {
+        if (CallbackContext.performed)
+        {
+            CheatManager.cheatManager.TryCheat(input);
         }
     }
 }

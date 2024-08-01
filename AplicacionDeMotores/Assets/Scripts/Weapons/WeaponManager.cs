@@ -5,47 +5,58 @@ using UnityEngine;
 public class WeaponManager : MonoBehaviour // TP2 - Nicolas Casanova
 {
     [Header("Weapon")]
-    [SerializeField] public Weapon[] _weapons;
-    [SerializeField] private int selected = 0;
+    [SerializeField] public Weapon[] weapons;
+    [SerializeField] private int _selected = 0;
+
+    public enum Weapons { Rifle, Granade}
+    [SerializeField] private Weapons _weapon;
 
     private void Start()
     {
-        ChangeSelected(selected);
+        ChangeSelected(_selected);
     }
 
     public void Attack()
     {
-        _weapons[selected].StartShoot();
+        weapons[_selected].StartShoot();
     }
     public void Cancel()
     {
-        _weapons[selected].CancelShoot();
+        weapons[_selected].CancelShoot();
     }
 
     public void Ability()
     {
-        _weapons[selected].TryAbility();
+        weapons[_selected].TryAbility();
+    }
+
+    public void ChangeWeapon(Weapons weapon)
+    {
+        if (_weapon != weapon)
+        {
+
+        }
     }
 
     public void ChangeSelected(int weapon)
     {
-        if (selected != weapon)
+        if (_selected != weapon)
         {
-            _weapons[selected].CancelShoot();
-            selected = weapon;
-            for (int i = 0; i < _weapons.Length; i++) // Se que no es necesario hacer un for (con un if ya esta listo), pero lo hago escalable para que se puedan poner mas armas
+            weapons[_selected].CancelShoot();
+            _selected = weapon;
+            for (int i = 0; i < weapons.Length; i++) // Se que no es necesario hacer un for (con un if ya esta listo), pero lo hago escalable para que se puedan poner mas armas
             {
-                if (selected == i)
+                if (_selected == i)
                 {
-                    _weapons[i].gameObject.SetActive(true);
-                    _weapons[i].canShoot = true;
+                    weapons[i].gameObject.SetActive(true);
+                    weapons[i].canShoot = true;
                 }
                 else
                 {
-                    _weapons[i].gameObject.SetActive(false);
+                    weapons[i].gameObject.SetActive(false);
                 }
             }
-            _weapons[selected].StartCoroutine(_weapons[selected].Equip());
+            weapons[_selected].StartCoroutine(weapons[_selected].Equip());
         }
     }
 }
